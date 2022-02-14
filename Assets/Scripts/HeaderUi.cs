@@ -10,4 +10,13 @@ public class HeaderUi : MonoBehaviour
     public TextMeshProUGUI workForce;
     
     public TextMeshProUGUI dateText;
+    
+    private static HeaderUi instacne;
+    public static HeaderUi Instance => instacne;
+
+    private void Awake()
+    {
+        instacne = this;
+    }
+
 }

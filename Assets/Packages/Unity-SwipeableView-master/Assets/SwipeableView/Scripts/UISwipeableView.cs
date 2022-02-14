@@ -47,10 +47,8 @@ namespace SwipeableView
                 UpdateCardPosition(card);
                 _cards.Add(card);
 
-                card.ActionSwipedRight += swipeableCard =>
-                    TextPopUpSpawnerManager.Instance.StartTextPopUpTween(gameObject, "Test right ", Color.green);
-                card.ActionSwipedLeft += swipeableCard =>
-                    TextPopUpSpawnerManager.Instance.StartTextPopUpTween(gameObject, "Test left ", Color.red);
+                card.ActionSwipedRight += SwipeSystem.SwipedRight;
+                card.ActionSwipedLeft += SwipeSystem.SwipedLeft;
             }
         }
 

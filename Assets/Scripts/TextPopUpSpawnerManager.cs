@@ -25,10 +25,11 @@ public class TextPopUpSpawnerManager : MonoBehaviour
         }
     }
 
-    public void StartTextPopUpTween(GameObject whereToSpawnGo, string text, Color color)
+    public void StartTextPopUpTween(string text, Color color)
     {
         TextPopUpTween textPopUpTween = damageTweens.FirstOrDefault(d => !d.gameObject.activeSelf);
-        textPopUpTween.gameObject.transform.SetParent(whereToSpawnGo.transform, false);
+        // textPopUpTween.gameObject.transform.position = whereToSpawn;
+        textPopUpTween.gameObject.transform.SetParent(transform, false);
         textPopUpTween.gameObject.transform.localPosition = new Vector3();
         textPopUpTween.popUpText = text;
         textPopUpTween.text.color = color;
