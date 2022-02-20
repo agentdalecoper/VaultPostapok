@@ -6,5 +6,6 @@ namespace Client
     class SceneConfiguration : ScriptableObject
     {
         public PointsComponent startupPoints;
+        public SkillsComponent startSkills;
     }
 }

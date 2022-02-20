@@ -16,3 +16,9 @@ MonoBehaviour:
     money: 0
     food: 0
     hull: 0
+  startSkills:
+    fighting: 0
+    science: 0
+    mechanical: 0
+    survival: 1
+    charisma: 0
