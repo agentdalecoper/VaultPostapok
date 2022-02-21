@@ -6,6 +6,13 @@ using SwipeableView;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+public struct Trade
+{
+    public SkillsComponent[] skillsComponents;
+    public int[] skillComponentsCosts;
+    public int hullCost;
+    public int foodCost;
+}
 sealed class EcsStartupManager : MonoBehaviour
 {
     EcsWorld _world;
@@ -24,15 +31,18 @@ sealed class EcsStartupManager : MonoBehaviour
 #endif
 
         /*
+         * SceneConfiguration
+         *
          * CardInfo [string text; sprite spr;]
          * PointsLeftRight [PointsComponent left; PointsComponent right;]
          * SkillsLeftRight [SkillsComponent left; SkillsComponent right;]
          * SkillsCheck [SkillsComponent skillsToCheck;]
+         * Trade[SkillsComponent upgrades[3], int hullCost, int foodCost]
          * 
          * SwipeCardEntity [CardInfo, PointsLeftRight]
          * LevelUpCardEntity[CardInfo, SkillsLeftRight]
          * SkillRollCardEntity[CardInfo, SkillsCheck, PointsLeftRight]
-         * TradeCardEntity[CardInfo, ????]???? нужно ли через card представлять
+         * TradeCardEntity[CardInfo, Trade] нужно ли через card представлять
          *
          * 1) CardsCreateSystem (creates cards right now without a day etc)
          * 1.1) we have cards[EcsEntityCard, EcsEntityCard ....]
@@ -72,6 +82,7 @@ sealed class EcsStartupManager : MonoBehaviour
             .Add(new SwipeSystem())
             .Add(new SkillsSystem())
             .Add(new SkillsRollSystem())
+            .Add(new TradeSystem())
             .Inject(sceneConfiguration)
             .Inject(gameContext)
             .Inject(pointsSystem)
@@ -95,6 +106,13 @@ sealed class EcsStartupManager : MonoBehaviour
             _world.Destroy();
             _world = null;
         }
+    }
+}
+
+internal class TradeSystem : IEcsRunSystem
+{
+    public void Run()
+    {
     }
 }
 
@@ -274,6 +292,14 @@ internal class CardsSystem : IEcsRunSystem
                 CardUI.Instance.ShowCardData(cardEntity, cardInfo,
                     cardEntity.Get<PointsLeftRight>(), cardEntity.Get<SkillsCheck>());
             }
+            else if (cardEntity.Has<Trade>())
+            {
+                TradeUI.Instance.ShowCard(cardEntity.Get<Trade>());
+            }
+            else
+            {
+                Debug.LogError("This card is not known type " + cardEntity);
+            }
         }
     }
 }
@@ -285,7 +311,7 @@ internal class CardsInitSystem : IEcsInitSystem
     public void Init()
     {
         CreatePointsCard(new PointsLeftRight
-            {left = new PointsComponent {food = 1}, right = new PointsComponent() {food = -1}});
+            {left = new PointsComponent {food = 1}, right = new PointsComponent {food = -1}});
         CreatePointsCard(new PointsLeftRight
             {left = new PointsComponent {hull = 1}, right = new PointsComponent()});
         CreatePointsCard(new PointsLeftRight
@@ -300,37 +326,63 @@ internal class CardsInitSystem : IEcsInitSystem
 
         CreateSkillsCheckCard(new PointsLeftRight
                 {left = new PointsComponent {hull = 1}, right = new PointsComponent() {food = 1}},
-            new SkillsCheck() {skillsToCheck = new SkillsComponent {mechanical = 1}});
+            new SkillsCheck {skillsToCheck = new SkillsComponent {mechanical = 1}});
         CreateSkillsCheckCard(new PointsLeftRight
                 {left = new PointsComponent {hull = 1}, right = new PointsComponent() {food = 1}},
-            new SkillsCheck() {skillsToCheck = new SkillsComponent {charisma = 1}});
+            new SkillsCheck {skillsToCheck = new SkillsComponent {charisma = 1}});
         CreateSkillsCheckCard(new PointsLeftRight
                 {left = new PointsComponent {hull = 1}, right = new PointsComponent() {food = 1}},
-            new SkillsCheck() {skillsToCheck = new SkillsComponent {fighting = 1}});
+            new SkillsCheck {skillsToCheck = new SkillsComponent {fighting = 1}});
+
+        CreateTradeCard(new Trade
+        {
+            skillsComponents =
+                new[]
+                {
+                    new SkillsComponent {fighting = 1},
+                    new SkillsComponent {survival = 1},
+                    new SkillsComponent {science = 1}
+                },
+            skillComponentsCosts = new[] {1, 1, 1},
+            foodCost = 1, hullCost = 1
+        });
     }
 
     private EcsEntity CreatePointsCard(PointsLeftRight pointsLeftRight)
     {
-        EcsEntity cardEntity = ecsWorld.NewEntity();
-        cardEntity.Get<CardInfo>();
+        var cardEntity = CreateCard();
         cardEntity.Replace(pointsLeftRight);
         return cardEntity;
     }
 
     private EcsEntity CreateSkillsCard(SkillsLeftRight skillsLeftRight)
     {
-        EcsEntity cardEntity = ecsWorld.NewEntity();
-        cardEntity.Get<CardInfo>();
+        EcsEntity cardEntity = CreateCard();
         cardEntity.Replace(skillsLeftRight);
         return cardEntity;
     }
 
     private EcsEntity CreateSkillsCheckCard(PointsLeftRight pointsLeftRight, SkillsCheck skillsCheck)
     {
-        EcsEntity cardEntity = ecsWorld.NewEntity();
-        cardEntity.Get<CardInfo>();
+        EcsEntity cardEntity = CreateCard();
         cardEntity.Replace(pointsLeftRight);
         cardEntity.Replace(skillsCheck);
+        return cardEntity;
+    }
+
+    private EcsEntity CreateTradeCard(Trade trade)
+    {
+        EcsEntity cardEntity = CreateCard();
+        cardEntity.Replace(trade);
+        
+        return cardEntity;
+    }
+    
+       
+    private EcsEntity CreateCard()
+    {
+        EcsEntity cardEntity = ecsWorld.NewEntity();
+        cardEntity.Get<CardInfo>();
         return cardEntity;
     }
 }
