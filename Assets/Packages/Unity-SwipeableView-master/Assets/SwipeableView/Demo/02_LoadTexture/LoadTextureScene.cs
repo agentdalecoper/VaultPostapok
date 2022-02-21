@@ -26,7 +26,7 @@ namespace SwipeableView
                 })
                 .ToList();
 
-            swipeableView.UpdateData(data);
+            // swipeableView.UpdateData(data);
         }
 
         public void OnClickLike()

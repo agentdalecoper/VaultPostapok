@@ -55,7 +55,7 @@ namespace SwipeableView
                 card.ActionSwipedLeft += swipeableCard => ActionSwipedLeft?.Invoke(swipeableCard);
             }
 
-            ActionNewCardAppeared += SwipeSystem.NewCardAppeared;
+            // ActionNewCardAppeared += SwipeSystem.NewCardAppeared;
         }
 
         /// <summary>

@@ -20,11 +20,9 @@ namespace SwipeableView
                 .Select(i => new BasicCardData
                 {
                     color = new Color(1f, 1f, 1f, 1.0f)
-                    // , sprite = randomSprites[i % sprites.Length]
+                    , sprite = randomSprites[i % sprites.Length]
                 })
                 .ToList();
-
-            swipeableView.UpdateData(data);
         }
 
         public void OnClickLike()
