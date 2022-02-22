@@ -23,7 +23,7 @@ internal class CardInputSystem : IEcsRunSystem
             }
 
             EcsEntity currentCard = gameContext.currentCard.Value;
-
+            
             if (currentCard.Has<SkillsLeftRight>())
             {
                 SkillsLeftRight skillsLeftRight = currentCard.Get<SkillsLeftRight>();
@@ -38,15 +38,14 @@ internal class CardInputSystem : IEcsRunSystem
             }
             else if (currentCard.Has<PointsLeftRight>() && currentCard.Has<SkillsCheck>())
             {
-                
-            } else if (currentCard.Has<Trade>())
+            }
+            else if (currentCard.Has<Trade>())
             {
-                
-            } else if (gameContext.dayCards.Count == 0)
+            }
+            else if(currentCard.Get<CardInfo>().cardType == CardType.EndOfDay)
             {
                 EcsEntity entity = ecsWorld.NewEntity();
                 entity.Get<EndOfDay>();
-                return;
             }
             else
             {

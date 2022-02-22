@@ -6,12 +6,19 @@ using Leopotam.Ecs;
 using SwipeableView;
 using UnityEngine;
 
+[Serializable]
 public struct Trade
 {
     public SkillsComponent[] skillsComponents;
     public int[] skillComponentsCosts;
     public PointsComponent[] pointsComponents;
     public int[] pointsComponentsCosts;
+}
+
+[Serializable]
+public struct Day
+{
+    public CardObject[] cardsObjects;
 }
 
 sealed class EcsStartupManager : MonoBehaviour
@@ -32,12 +39,14 @@ sealed class EcsStartupManager : MonoBehaviour
 #endif
 
         /*
-         * endOfDaySystem
+         * так - а как вообще должны карты подтягиваться из конфигурации
+         * так ну это либо scriptable objects которые наследуются от интерфейса
          * 
          */
         GameContext gameContext = new GameContext();
         PointsSystem pointsSystem = new PointsSystem();
         _systems
+            .Add(new DaySystem())
             .Add(new CardsInitSystem())
             .Add(new CardInputSystem())
             .Add(new CardsViewSystem())
@@ -54,6 +63,8 @@ sealed class EcsStartupManager : MonoBehaviour
             .OneFrame<SwipeDirection>()
             .OneFrame<DiceClick>()
             .OneFrame<DiceRoll>()
+            .OneFrame<CreateCard>()
+            .OneFrame<EndOfDay>()
             .Init();
     }
 
@@ -74,6 +85,39 @@ sealed class EcsStartupManager : MonoBehaviour
     }
 }
 
+internal class DaySystem : IEcsInitSystem, IEcsRunSystem
+{
+    private GameContext gameContext;
+    private EcsWorld ecsWorld;
+    private SceneConfiguration sceneConfiguration;
+    
+    public void Init()
+    {
+        SpawnDay();
+    }
+    
+    public void Run()
+    {
+        if (!gameContext.currentDay.HasValue || !gameContext.currentDay.Value.IsAlive())
+        {
+            SpawnDay();
+        }
+    }
+
+    private void SpawnDay()
+    {
+        EcsEntity dayEntity = ecsWorld.NewEntity();
+        dayEntity.Replace(sceneConfiguration.days[gameContext.dayNumber]);
+        gameContext.currentDay = dayEntity;
+
+        dayEntity.Get<CreateCard>();
+    }
+}
+
+internal struct CreateCard
+{
+}
+
 public struct DiceRoll
 {
     public int roll;
@@ -88,15 +132,18 @@ public class GameContext
 {
     public EcsEntity? currentCard;
     public List<EcsEntity> dayCards;
-    public int dayNumber = 1;
+    public EcsEntity? currentDay;
+    public int dayNumber;
 }
 
 public struct CardInfo
 {
     public string text;
     public Sprite sprite;
+    public CardType cardType;
 }
 
+[Serializable]
 public struct PointsLeftRight
 {
     public PointsComponent left;
@@ -113,6 +160,7 @@ public struct PointsLeftRight
     }
 }
 
+[Serializable]
 public struct SkillsLeftRight
 {
     public SkillsComponent left;
@@ -129,6 +177,7 @@ public struct SkillsLeftRight
     }
 }
 
+[Serializable]
 public struct SkillsCheck
 {
     public SkillsComponent skillsToCheck;

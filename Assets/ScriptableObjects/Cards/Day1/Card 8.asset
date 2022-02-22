@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15df5c63f53e4003981dd39c1a53ce6, type: 3}
+  m_Name: Card 8
+  m_EditorClassIdentifier: 
+  cardType: 1
+  pointsLeftRight:
+    left:
+      money: 1
+      food: 0
+      hull: 0
+    right:
+      money: 0
+      food: 0
+      hull: 0
+  skillsLeftRight:
+    left:
+      fighting: 0
+      science: 1
+      mechanical: 0
+      survival: 0
+      charisma: 0
+    right:
+      fighting: 0
+      science: 0
+      mechanical: 0
+      survival: 0
+      charisma: 1
+  skillsCheck:
+    skillsToCheck:
+      fighting: 1
+      science: 0
+      mechanical: 0
+      survival: 0
+      charisma: 0
+  trade:
+    skillsComponents: []
+    skillComponentsCosts: 
+    pointsComponents: []
+    pointsComponentsCosts: 

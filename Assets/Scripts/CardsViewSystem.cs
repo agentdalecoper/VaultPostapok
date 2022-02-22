@@ -10,16 +10,13 @@ internal class CardsViewSystem : IEcsRunSystem
     // и та, которая выставляет вьюху
     public void Run()
     {
+        if (gameContext.dayCards.Count == 0)
+        {
+            return;
+        }
+        
         if (!gameContext.currentCard.HasValue || !gameContext.currentCard.Value.IsAlive())
         {
-            if (gameContext.dayCards.Count == 0)
-            {
-                EndOfDayUI.Instance.gameObject.SetActive(true);
-                EndOfDayUI.Instance.SetData(gameContext.dayNumber);
-                SetActiveEndOfDayUi();
-                return;
-            }
-            
             EcsEntity cardEntity = gameContext.dayCards[0];
             gameContext.dayCards.Remove(cardEntity);
 
@@ -52,6 +49,11 @@ internal class CardsViewSystem : IEcsRunSystem
             {
                 SetActiveTradeUi();
                 TradeUI.Instance.ShowCard(cardEntity.Get<Trade>());
+            }
+            else if (cardEntity.Get<CardInfo>().cardType == CardType.EndOfDay)
+            {
+                EndOfDayUI.Instance.SetData(gameContext.dayNumber);
+                SetActiveEndOfDayUi();
             }
             else
             {

@@ -10,7 +10,9 @@ public class EndOfDaySystem : IEcsRunSystem
     {
         if (!filter.IsEmpty())
         {
+            gameContext.currentDay.Value.Destroy();
             PointsSystem.ChangePoints(sceneConfiguration.hungerEndOfDayPoints);
+            gameContext.dayNumber++;
         }
     }
 }
