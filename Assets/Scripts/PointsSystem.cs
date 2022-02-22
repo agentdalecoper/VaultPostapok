@@ -24,9 +24,9 @@ internal class PointsSystem : IEcsInitSystem, IEcsRunSystem
     {
         ref var pointsComponent = ref pointsEntity.Get<PointsComponent>();
 
-        if (pointsComponent.money + costPoints.money >= 0 &&
-            pointsComponent.food + costPoints.food >= 0 &&
-            pointsComponent.hull + costPoints.hull >= 0)
+        if (pointsComponent.money - costPoints.money>= 0 &&
+            pointsComponent.food - costPoints.food >= 0 &&
+            pointsComponent.hull - costPoints.hull >= 0)
         {
             return true;
         }

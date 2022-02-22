@@ -12,8 +12,8 @@ public struct Trade
     public int[] skillComponentsCosts;
     public PointsComponent[] pointsComponents;
     public int[] pointsComponentsCosts;
-
 }
+
 sealed class EcsStartupManager : MonoBehaviour
 {
     EcsWorld _world;
@@ -30,7 +30,7 @@ sealed class EcsStartupManager : MonoBehaviour
         Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create(_world);
         Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_systems);
 #endif
-        
+
         /*
          * endOfDaySystem
          * 
@@ -47,6 +47,7 @@ sealed class EcsStartupManager : MonoBehaviour
             .Add(new SkillsSystem())
             .Add(new SkillsRollSystem())
             .Add(new TradeSystem())
+            .Add(new EndOfDaySystem())
             .Inject(sceneConfiguration)
             .Inject(gameContext)
             .Inject(pointsSystem)
@@ -87,6 +88,7 @@ public class GameContext
 {
     public EcsEntity? currentCard;
     public List<EcsEntity> dayCards;
+    public int dayNumber = 1;
 }
 
 public struct CardInfo

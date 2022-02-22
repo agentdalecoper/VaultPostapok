@@ -41,6 +41,10 @@ internal class CardInputSystem : IEcsRunSystem
             } else if (currentCard.Has<Trade>())
             {
                 
+            } else if (gameContext.dayCards.Count == 0)
+            {
+                
+                return;
             }
             else
             {
