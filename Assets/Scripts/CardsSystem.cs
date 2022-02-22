@@ -9,14 +9,14 @@ internal class CardsSystem : IEcsRunSystem
     // так ну что лучше по одному ивенту на каждый тип карты? Криво. Или отсюда короче напрямую вызывать
     // лол походу пришло время писать криво и костыли ибо чето опять же хз как сделать этот паттерн - потом увидим.
     // либо ивент делать не просто из функции а передаввать уишке весь стейт за счет функции хммм но короче потом
-    private EcsFilter<CardInfo> filter;
     private GameContext gameContext;
 
     public void Run()
     {
         if (!gameContext.currentCard.HasValue || !gameContext.currentCard.Value.IsAlive())
         {
-            var cardEntity = filter.GetEntity(0);
+            EcsEntity cardEntity = gameContext.dayCards[0];
+            gameContext.dayCards.Remove(cardEntity);
 
             if (!cardEntity.IsAlive())
             {

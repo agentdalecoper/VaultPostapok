@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Client;
 using Leopotam.Ecs;
@@ -29,48 +30,11 @@ sealed class EcsStartupManager : MonoBehaviour
         Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create(_world);
         Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_systems);
 #endif
-
+        
         /*
-         * SceneConfiguration
-         *
-         * CardInfo [string text; sprite spr;]
-         * PointsLeftRight [PointsComponent left; PointsComponent right;]
-         * SkillsLeftRight [SkillsComponent left; SkillsComponent right;]
-         * SkillsCheck [SkillsComponent skillsToCheck;]
-         * Trade[SkillsComponent upgrades[3], int hullCost, int foodCost]
+         * endOfDaySystem
          * 
-         * SwipeCardEntity [CardInfo, PointsLeftRight]
-         * LevelUpCardEntity[CardInfo, SkillsLeftRight]
-         * SkillRollCardEntity[CardInfo, SkillsCheck, PointsLeftRight]
-         * TradeCardEntity[CardInfo, Trade] нужно ли через card представлять
-         *
-         * 1) CardsCreateSystem (creates cards right now without a day etc)
-         * 1.1) we have cards[EcsEntityCard, EcsEntityCard ....]
-         *
-         * 2) CardSystem - cards.First() ++ currentCard
-         * 2.1) onCardAppeared?.Invoke()
-         *
-         * 3) CardUI - show UI with SwipeCard, LevelUp, SkillRoll or TradeCard of EcsCardEntity
-         * 
-         * 3.1) UI for SwipeCard or LevelUp: await swipe => EcsEntity[SwipeDirection]
-         * 3.1.1) SwipeSystem: await EcsEntity[SwipeDirection] => calculateResources(); onSwipeResult?.Invoke();
-         * 3.1.1) UI for SwipeCard or LevelUp: await onSwipeResult => render results
-         * 
-         * 3.2) UI for SkillRoll: await roll clicked => create EcsEntity[RollClicked]
-         * 3.2.1) SkillSystem: await EcsEntity[RollClicked] => doARoll(); calculateWinOrLoss(); caclulateResources();
-         *                                                          onRollSkillResult?.Invoke(actualRoll);
-         * 3.2.2) UI for SkillRoll: await onRollSkillResult => render results
-         *
-         * 3.3) Trade: show different screenUI => if bought points => EcsEntity[Trade, PointsComponent]
-         *                                        if bought resource => EcsEntity[Trade, SkillsComponent]
-         * 3.3.1) TradeSystem - await EcsEntity[Trade] => and resoruce and remove cost
-         * 3.3.2) Trade UI => rerender UI
-         *
-         * По поводу уишки блин - реально идет выяснение что лучше:
-         *      - контроль от юзера через прямой вызов сервиса или через создание командных EcsEntity
-         *      - передача данных UI через event или через EcsFilter 
          */
-
         GameContext gameContext = new GameContext();
         PointsSystem pointsSystem = new PointsSystem();
         _systems
@@ -109,30 +73,6 @@ sealed class EcsStartupManager : MonoBehaviour
     }
 }
 
-internal class TradeSystem : IEcsInitSystem, IEcsRunSystem
-{
-    public void Init()
-    {
-        TradeUI.Instance.onBoughtSkills += (skillsComponent, cost) =>
-        {
-            SkillsSystem.Instance.CreateSkillsUpdate(skillsComponent);
-            PointsSystem.ChangePoints(new PointsComponent {money = -cost});
-        };
-
-        TradeUI.Instance.onBoughtPoints += (points, cost) =>
-        {
-            PointsSystem.ChangePoints(points);
-            PointsSystem.ChangePoints(new PointsComponent {money = -cost});
-        };
-    }
-    
-    public void Run()
-    {
-        
-    }
-
-}
-
 public struct DiceRoll
 {
     public int roll;
@@ -146,6 +86,7 @@ public struct DiceClick
 public class GameContext
 {
     public EcsEntity? currentCard;
+    public List<EcsEntity> dayCards;
 }
 
 public struct CardInfo
