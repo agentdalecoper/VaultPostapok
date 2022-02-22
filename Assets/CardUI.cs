@@ -91,6 +91,7 @@ public class CardUI : MonoBehaviour
 
     private void ActivateDiceView()
     {
+        diceView.gameObject.SetActive(true);
         diceView.diceEnabled = true;
         diceView.GetComponent<Image>().color = Color.white;
 
