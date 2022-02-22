@@ -40,7 +40,7 @@ sealed class EcsStartupManager : MonoBehaviour
         _systems
             .Add(new CardsInitSystem())
             .Add(new CardInputSystem())
-            .Add(new CardsSystem())
+            .Add(new CardsViewSystem())
             .Add(new DiceSystem())
             .Add(pointsSystem)
             .Add(new SwipeSystem())

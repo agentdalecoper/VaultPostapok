@@ -1,15 +1,16 @@
+using Client;
 using Leopotam.Ecs;
 
 public class EndOfDaySystem : IEcsRunSystem
 {
     private GameContext gameContext;
+    private SceneConfiguration sceneConfiguration;
+    private EcsFilter<EndOfDay> filter;
     public void Run()
     {
-        // todo also refactor these checks to service
-        if (gameContext.dayCards.Count == 0 && (!gameContext.currentCard.HasValue || !gameContext.currentCard.Value.IsAlive()))
+        if (!filter.IsEmpty())
         {
-            EndOfDayUI.Instance.gameObject.SetActive(true);
-            EndOfDayUI.Instance.SetData(gameContext.dayNumber);
+            PointsSystem.ChangePoints(sceneConfiguration.hungerEndOfDayPoints);
         }
     }
 }

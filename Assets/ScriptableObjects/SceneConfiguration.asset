@@ -22,3 +22,7 @@ MonoBehaviour:
     mechanical: 0
     survival: 1
     charisma: 0
+  hungerEndOfDayPoints:
+    money: 0
+    food: -1
+    hull: 0

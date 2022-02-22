@@ -1,17 +1,22 @@
 using Leopotam.Ecs;
 using UnityEngine;
 
-internal class CardsSystem : IEcsRunSystem
+internal class CardsViewSystem : IEcsRunSystem
 {
     private EcsWorld ecsWorld;
     private GameContext gameContext;
 
+    // вот эту систему можно разбить - на ту которая логически решает так нету карты и нужна следуюшая
+    // и та, которая выставляет вьюху
     public void Run()
     {
         if (!gameContext.currentCard.HasValue || !gameContext.currentCard.Value.IsAlive())
         {
             if (gameContext.dayCards.Count == 0)
             {
+                EndOfDayUI.Instance.gameObject.SetActive(true);
+                EndOfDayUI.Instance.SetData(gameContext.dayNumber);
+                SetActiveEndOfDayUi();
                 return;
             }
             
@@ -55,16 +60,25 @@ internal class CardsSystem : IEcsRunSystem
         }
     }
 
+    private static void SetActiveEndOfDayUi()
+    {
+        CardUI.Instance.gameObject.SetActive(false);
+        TradeUI.Instance.gameObject.SetActive(false);
+        EndOfDayUI.Instance.gameObject.SetActive(true);
+    }
+
     private static void SetActiveTradeUi()
     {
         CardUI.Instance.gameObject.SetActive(false);
         TradeUI.Instance.gameObject.SetActive(true);
+        EndOfDayUI.Instance.gameObject.SetActive(false);
     }
     
     private static void SetActiveCardUi()
     {
         CardUI.Instance.gameObject.SetActive(true);
         TradeUI.Instance.gameObject.SetActive(false);
+        EndOfDayUI.Instance.gameObject.SetActive(false);
     }
 
 }

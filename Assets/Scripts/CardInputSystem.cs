@@ -8,6 +8,7 @@ internal class CardInputSystem : IEcsRunSystem
     private EcsFilter<SwipeDirection> swipeFilter;
     private PointsSystem pointsSystem;
     private GameContext gameContext;
+    private EcsWorld ecsWorld;
 
     public void Run()
     {
@@ -43,7 +44,8 @@ internal class CardInputSystem : IEcsRunSystem
                 
             } else if (gameContext.dayCards.Count == 0)
             {
-                
+                EcsEntity entity = ecsWorld.NewEntity();
+                entity.Get<EndOfDay>();
                 return;
             }
             else
@@ -56,4 +58,8 @@ internal class CardInputSystem : IEcsRunSystem
             currentCard.Destroy();
         }
     }
+}
+
+internal struct EndOfDay
+{
 }

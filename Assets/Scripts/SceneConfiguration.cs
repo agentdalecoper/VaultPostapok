@@ -7,5 +7,6 @@ namespace Client
     {
         public PointsComponent startupPoints;
         public SkillsComponent startSkills;
+        public PointsComponent hungerEndOfDayPoints;
     }
 }
