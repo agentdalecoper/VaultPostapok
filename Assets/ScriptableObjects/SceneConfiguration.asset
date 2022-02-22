@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startupPoints:
     money: 0
-    food: 0
-    hull: 0
+    food: 1
+    hull: 1
   startSkills:
     fighting: 0
     science: 0
@@ -40,14 +40,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 326b7205c13974244b00fead5ca54d0e, type: 2}
     - {fileID: 11400000, guid: fe346d2d9095d4fedbda8975cefdae9a, type: 2}
   - cardsObjects:
-    - {fileID: 11400000, guid: 28a2ff19b039f4f0685f2c5f1a727ff0, type: 2}
-    - {fileID: 11400000, guid: ae8bbeed0475b4a83a80c38c08e10142, type: 2}
-    - {fileID: 11400000, guid: eb81b30072a2d43e3b89f7319ad55535, type: 2}
-    - {fileID: 11400000, guid: bd97ac8e8db4b482bb261a2cb31b8e80, type: 2}
-    - {fileID: 11400000, guid: 4b692a90fee8f45dcad8880b126d7aa6, type: 2}
-    - {fileID: 11400000, guid: 964eb121aa6ba4145ba436f4eb947539, type: 2}
-    - {fileID: 11400000, guid: 44d3c58f28c3d4c3a8d52cbe61bd9ac1, type: 2}
-    - {fileID: 11400000, guid: 4a754866598824ed5927dc9f929a8898, type: 2}
-    - {fileID: 11400000, guid: 9ec507445e4e2438fa1a89f5e2d4d074, type: 2}
-    - {fileID: 11400000, guid: 326b7205c13974244b00fead5ca54d0e, type: 2}
-    - {fileID: 11400000, guid: fe346d2d9095d4fedbda8975cefdae9a, type: 2}
+    - {fileID: 11400000, guid: 66edb4128d6884031b84cc61fcb519a1, type: 2}

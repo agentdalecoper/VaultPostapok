@@ -13,10 +13,6 @@ public class EndOfDayUI : MonoBehaviour
     public TextMeshProUGUI endOfDayText;
     public Button button;
 
-    public void SetData(int dayNumber)
-    {
-        endOfDayText.text = $"End of day {dayNumber}";
-    }
 
     private void Awake()
     {
@@ -24,4 +20,9 @@ public class EndOfDayUI : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+
+    public void SetData(int dayNumber)
+    {
+        endOfDayText.text = $"End of day {dayNumber}";
+    }
 }

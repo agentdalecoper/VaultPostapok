@@ -57,6 +57,7 @@ sealed class EcsStartupManager : MonoBehaviour
             .Add(new SkillsRollSystem())
             .Add(new TradeSystem())
             .Add(new EndOfDaySystem())
+            .Add(new EndOfGameSystem())
             .Inject(sceneConfiguration)
             .Inject(gameContext)
             .Inject(pointsSystem)
@@ -85,35 +86,6 @@ sealed class EcsStartupManager : MonoBehaviour
     }
 }
 
-internal class DaySystem : IEcsInitSystem, IEcsRunSystem
-{
-    private GameContext gameContext;
-    private EcsWorld ecsWorld;
-    private SceneConfiguration sceneConfiguration;
-    
-    public void Init()
-    {
-        SpawnDay();
-    }
-    
-    public void Run()
-    {
-        if (!gameContext.currentDay.HasValue || !gameContext.currentDay.Value.IsAlive())
-        {
-            SpawnDay();
-        }
-    }
-
-    private void SpawnDay()
-    {
-        EcsEntity dayEntity = ecsWorld.NewEntity();
-        dayEntity.Replace(sceneConfiguration.days[gameContext.dayNumber]);
-        gameContext.currentDay = dayEntity;
-
-        dayEntity.Get<CreateCard>();
-    }
-}
-
 internal struct CreateCard
 {
 }
@@ -134,6 +106,7 @@ public class GameContext
     public List<EcsEntity> dayCards;
     public EcsEntity? currentDay;
     public int dayNumber;
+    public EndOfGame? endOfGame;
 }
 
 public struct CardInfo

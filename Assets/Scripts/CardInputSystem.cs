@@ -9,6 +9,7 @@ internal class CardInputSystem : IEcsRunSystem
     private PointsSystem pointsSystem;
     private GameContext gameContext;
     private EcsWorld ecsWorld;
+    private SceneConfiguration sceneConfiguration;
 
     public void Run()
     {
@@ -44,6 +45,7 @@ internal class CardInputSystem : IEcsRunSystem
             }
             else if(currentCard.Get<CardInfo>().cardType == CardType.EndOfDay)
             {
+                PointsSystem.ChangePoints(sceneConfiguration.hungerEndOfDayPoints);
                 EcsEntity entity = ecsWorld.NewEntity();
                 entity.Get<EndOfDay>();
             }

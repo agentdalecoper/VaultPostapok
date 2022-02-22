@@ -14,6 +14,13 @@ internal class CardsViewSystem : IEcsRunSystem
         {
             return;
         }
+
+        if (gameContext.endOfGame.HasValue)
+        {
+            EndOfGameUI.Instance.SetData(gameContext.endOfGame.Value);
+            SetActiveEndOfGame();
+            return;
+        }
         
         if (!gameContext.currentCard.HasValue || !gameContext.currentCard.Value.IsAlive())
         {
@@ -60,6 +67,14 @@ internal class CardsViewSystem : IEcsRunSystem
                 Debug.LogError("This card is not known type " + cardEntity);
             }
         }
+    }
+
+    private static void SetActiveEndOfGame()
+    {
+        CardUI.Instance.gameObject.SetActive(false);
+        TradeUI.Instance.gameObject.SetActive(false);
+        EndOfDayUI.Instance.gameObject.SetActive(false);
+        EndOfGameUI.Instance.gameObject.SetActive(true);
     }
 
     private static void SetActiveEndOfDayUi()
