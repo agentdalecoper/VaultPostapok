@@ -18,27 +18,32 @@ namespace Client
             string result = "";
             if (fighting != 0)
             {
-                result += " +🪖fighting: " + fighting;
+                result += "+🪖fighting: " + fighting;
+                result += " ";
             }
 
             if (science != 0)
             {
-                result += " +🔬science: " + science;
+                result += "+🔬science: " + science;
+                result += " ";
             }
 
             if (mechanical != 0)
             {
-                result += " +🔧mechanical: " + mechanical;
+                result += "+🔧mechanical: " + mechanical;
+                result += " ";
             }
 
             if (survival != 0)
             {
-                result += " +🔥survival: " + survival;
+                result += "+🔥survival: " + survival;
+                result += " ";
             }
 
             if (charisma != 0)
             {
-                result += " +💬charisma: " + charisma;
+                result += "+💬charisma: " + charisma;
+                result += " ";
             }
 
             return result;
