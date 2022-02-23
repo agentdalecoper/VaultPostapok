@@ -5,8 +5,8 @@ using UnityEngine;
 
 internal class SkillsSystem : IEcsInitSystem, IEcsRunSystem
 {
-    public SkillsComponent playerSkills;
     private SceneConfiguration sceneConfiguration;
+    private GameContext gameContext;
 
     private EcsFilter<SkillsComponent, AddToPlayer> filter;
     private EcsWorld ecsWorld;
@@ -19,8 +19,8 @@ internal class SkillsSystem : IEcsInitSystem, IEcsRunSystem
     public void Init()
     {
         instance = this;
-        playerSkills = sceneConfiguration.startSkills;
-        onSkillsChanged?.Invoke(playerSkills, playerSkills);
+        gameContext.playerSkills = sceneConfiguration.startSkills;
+        onSkillsChanged?.Invoke(gameContext.playerSkills, gameContext.playerSkills);
     }
 
     public void Run()
@@ -28,15 +28,15 @@ internal class SkillsSystem : IEcsInitSystem, IEcsRunSystem
         foreach (int i in filter)
         {
             ref SkillsComponent skillsComponent = ref filter.Get1(i);
-            playerSkills.charisma += skillsComponent.charisma;
-            playerSkills.fighting += skillsComponent.fighting;
-            playerSkills.mechanical += skillsComponent.mechanical;
-            playerSkills.survival += skillsComponent.survival;
-            playerSkills.science += skillsComponent.science;
+            gameContext.playerSkills.charisma += skillsComponent.charisma;
+            gameContext.playerSkills.fighting += skillsComponent.fighting;
+            gameContext.playerSkills.mechanical += skillsComponent.mechanical;
+            gameContext.playerSkills.survival += skillsComponent.survival;
+            gameContext.playerSkills.science += skillsComponent.science;
 
             TextPopUpSpawnerManager.Instance.StartTextPopUpTween(skillsComponent.ToString(),
                 Color.green);
-            onSkillsChanged?.Invoke(skillsComponent, playerSkills);
+            onSkillsChanged?.Invoke(skillsComponent, gameContext.playerSkills);
 
             filter.GetEntity(i).Destroy();
         }

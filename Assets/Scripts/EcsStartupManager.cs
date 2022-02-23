@@ -107,6 +107,7 @@ public class GameContext
     public EcsEntity? currentDay;
     public int dayNumber;
     public EndOfGame? endOfGame;
+    public SkillsComponent playerSkills;
 }
 
 public struct CardInfo

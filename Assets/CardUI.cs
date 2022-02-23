@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Client;
 using Leopotam.Ecs;
 using TMPro;
 using UnityEngine;
@@ -66,7 +67,8 @@ public class CardUI : MonoBehaviour
     }
     
     
-    public async void ShowDiceData(DiceRoll diceRoll, bool success)
+    public async void ShowDiceData(DiceRoll diceRoll, bool success,
+        SkillsCheck skillsCheck, SkillsComponent playerSkills)
     {
         diceView.diceEnabled = false;
 
@@ -84,6 +86,10 @@ public class CardUI : MonoBehaviour
                 
         buttonLeft.gameObject.SetActive(true);
         buttonRight.gameObject.SetActive(true);
+
+        string successOrLoose = success ? "Dice success" : "Dice lose";
+        text.text = $"{successOrLoose} was checking {skillsCheck} vs. " +
+                    $" playerSkills={playerSkills} + diceRoll={diceRoll.roll}";
 
         await Task.Delay(TimeSpan.FromSeconds(20f));
         isWaitingUiDelay.TrySetResult(false);

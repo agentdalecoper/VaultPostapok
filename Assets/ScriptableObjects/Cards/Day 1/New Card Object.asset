@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d15df5c63f53e4003981dd39c1a53ce6, type: 3}
-  m_Name: Card 6
+  m_Name: New Card Object
   m_EditorClassIdentifier: 
-  cardType: 2
+  cardType: 0
   pointsLeftRight:
     left:
       money: 0
       food: 0
-      hull: -1
+      hull: 0
     right:
-      money: 1
+      money: 0
       food: 0
       hull: 0
   skillsLeftRight:
@@ -37,7 +37,7 @@ MonoBehaviour:
       charisma: 0
   skillsCheck:
     skillsToCheck:
-      fighting: 5
+      fighting: 0
       science: 0
       mechanical: 0
       survival: 0

@@ -33,11 +33,11 @@ internal class SkillsRollSystem : IEcsRunSystem
             }
 
             SkillsCheck skillsCheck =  cardEntity.Get<SkillsCheck>();
-            bool success = skillsCheck.skillsToCheck.fighting > diceRoll.roll &&
-                           skillsCheck.skillsToCheck.science > diceRoll.roll &&
-                           skillsCheck.skillsToCheck.mechanical > diceRoll.roll &&
-                           skillsCheck.skillsToCheck.survival > diceRoll.roll &&
-                           skillsCheck.skillsToCheck.charisma > diceRoll.roll;
+            bool success = skillsCheck.skillsToCheck.fighting < diceRoll.roll + gameContext.playerSkills.fighting &&
+                           skillsCheck.skillsToCheck.science < diceRoll.roll + gameContext.playerSkills.science &&
+                           skillsCheck.skillsToCheck.mechanical < diceRoll.roll + gameContext.playerSkills.mechanical &&
+                           skillsCheck.skillsToCheck.survival < diceRoll.roll + gameContext.playerSkills.survival &&
+                           skillsCheck.skillsToCheck.charisma < diceRoll.roll + gameContext.playerSkills.charisma;
 
 
             PointsLeftRight pointsLeftRight = cardEntity.Get<PointsLeftRight>();
@@ -50,7 +50,7 @@ internal class SkillsRollSystem : IEcsRunSystem
                 PointsSystem.ChangePoints(pointsLeftRight.right);
             }
             
-            CardUI.Instance.ShowDiceData(diceRoll, success);
+            CardUI.Instance.ShowDiceData(diceRoll, success, skillsCheck, gameContext.playerSkills);
         }
     }
 }
