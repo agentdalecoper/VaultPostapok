@@ -21,31 +21,43 @@ public class TradeUI : MonoBehaviour
 
     public Button okButton;
 
+    private IEnumerable<SlotUI> slots;
+
     private void Awake()
     {
         instance = this;
         gameObject.SetActive(false);
+
+        slots = slotUis.Union(new List<SlotUI> {foodSlotUi, hullSlotUi});
     }
 
     public void ShowCard(Trade trade)
     {
-        var slots = slotUis.Union(new List<SlotUI> {foodSlotUi, hullSlotUi});
+        Recalculate(trade);
         foreach (SlotUI slotUI in slots)
         {
             slotUI.gameObject.SetActive(true);
-            slotUI.button.onClick.AddListener(delegate { Recalculate(trade); });
         }
-
-        Recalculate(trade);
     }
 
     private void Recalculate(Trade trade)
     {
+        foreach (SlotUI slotUI in slots)
+        {
+            slotUI.button.onClick.RemoveAllListeners();
+            slotUI.button.onClick.AddListener(delegate { Recalculate(trade); });
+        }
+
         SetSlotData(slotUis[0], trade.skillsComponents[0], trade.skillComponentsCosts[0]);
         SetSlotData(slotUis[1], trade.skillsComponents[1], trade.skillComponentsCosts[1]);
         SetSlotData(slotUis[2], trade.skillsComponents[2], trade.skillComponentsCosts[2]);
         SetSlotData(foodSlotUi, trade.pointsComponents[0], trade.pointsComponentsCosts[0]);
         SetSlotData(hullSlotUi, trade.pointsComponents[1], trade.pointsComponentsCosts[1]);
+
+        foreach (SlotUI slotUI in slots)
+        {
+            slotUI.button.onClick.AddListener(delegate { Recalculate(trade); });
+        }
     }
 
     private void SetSlotData(SlotUI slotUi, SkillsComponent skillsComponent, int cost)
@@ -66,8 +78,8 @@ public class TradeUI : MonoBehaviour
         slotUi.text.text = pointsComponent.ToString();
         slotUi.costText.text = cost.ToString();
     }
-    
-    
+
+
     private void CheckIfNotEnoughMoney(SlotUI slotUi, int cost)
     {
         if (!PointsSystem.EnoughPointsCost(new PointsComponent {money = cost}))
@@ -75,5 +87,4 @@ public class TradeUI : MonoBehaviour
             slotUi.button.interactable = false;
         }
     }
-    
 }

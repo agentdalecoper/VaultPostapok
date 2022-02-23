@@ -21,7 +21,7 @@ internal class EndOfGameSystem : IEcsRunSystem
             return;
         }
 
-        if (gameContext.dayCards.Count == 0 && gameContext.dayNumber == sceneConfiguration.days.Length - 1)
+        if (gameContext.dayCards.Count == 0 && gameContext.dayNumber == sceneConfiguration.days.Length)
         {
             var endGameEntity = ecsWorld.NewEntity();
             ref var endOfGame = ref endGameEntity.Get<EndOfGame>();

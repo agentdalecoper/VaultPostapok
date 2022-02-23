@@ -41,3 +41,11 @@ MonoBehaviour:
     - {fileID: 11400000, guid: fe346d2d9095d4fedbda8975cefdae9a, type: 2}
   - cardsObjects:
     - {fileID: 11400000, guid: 66edb4128d6884031b84cc61fcb519a1, type: 2}
+    - {fileID: 11400000, guid: 04dea4c10f955441a9d8ceddc8842fbf, type: 2}
+    - {fileID: 11400000, guid: 8f9d6ea3cdc4b4e34a0677ae5387f34a, type: 2}
+    - {fileID: 11400000, guid: 008b830f7faf34f3d83bcdf80408c4f0, type: 2}
+    - {fileID: 11400000, guid: 92e7f096b8f484ca99b1a57c6d6320e5, type: 2}
+    - {fileID: 11400000, guid: eb4a9f02b1f5949e1b64eb4f334d1e8a, type: 2}
+    - {fileID: 11400000, guid: e148bb9c149c44080b2e855f7ae4adc3, type: 2}
+    - {fileID: 11400000, guid: e1ee1213ac40c42ba99877fd2542b57b, type: 2}
+    - {fileID: 11400000, guid: d68f49d6b183b4040af610397ebc2923, type: 2}

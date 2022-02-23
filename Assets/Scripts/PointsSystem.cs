@@ -24,7 +24,7 @@ internal class PointsSystem : IEcsInitSystem, IEcsRunSystem
     {
         ref var pointsComponent = ref pointsEntity.Get<PointsComponent>();
 
-        if (pointsComponent.money - costPoints.money>= 0 &&
+        if (pointsComponent.money - costPoints.money >= 0 &&
             pointsComponent.food - costPoints.food >= 0 &&
             pointsComponent.hull - costPoints.hull >= 0)
         {
@@ -34,6 +34,7 @@ internal class PointsSystem : IEcsInitSystem, IEcsRunSystem
         return false;
     }
 
+    // todo такое ощущение тут надо через апдейт ecs entity это делать 
     public static void ChangePoints(PointsComponent inputChangePoints)
     {
         ref var pointsComponent = ref pointsEntity.Get<PointsComponent>();

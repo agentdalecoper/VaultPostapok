@@ -63,8 +63,8 @@ MonoBehaviour:
     pointsComponents:
     - money: 0
       food: 1
-      hull: 1
+      hull: 0
     - money: 0
       food: 0
-      hull: 0
+      hull: 1
     pointsComponentsCosts: 0100000001000000
