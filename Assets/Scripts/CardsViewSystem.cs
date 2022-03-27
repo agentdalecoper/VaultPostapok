@@ -1,4 +1,5 @@
 using Leopotam.Ecs;
+using SwipeableView;
 using UnityEngine;
 
 internal class CardsViewSystem : IEcsRunSystem
@@ -6,10 +7,52 @@ internal class CardsViewSystem : IEcsRunSystem
     private EcsWorld ecsWorld;
     private GameContext gameContext;
 
+    private EcsFilter<CardInfo, Render> renderFilter;
+
     // вот эту систему можно разбить - на ту которая логически решает так нету карты и нужна следуюшая
     // и та, которая выставляет вьюху
     public void Run()
     {
+        if (!renderFilter.IsEmpty())
+        {
+            EcsEntity cardEntity = renderFilter.GetEntity(0);
+            ref CardInfo cardInfo = ref cardEntity.Get<CardInfo>();
+            CardUI.Instance.ShowCardData(cardEntity, cardInfo);
+
+            Debug.Log("Show card " + cardEntity + " " + cardInfo.text);
+            // //todo unify card check logic
+            // if (cardEntity.Has<PointsLeftRight>() && !cardEntity.Has<SkillsCheck>())
+            // {
+            //     SetActiveCardUi();
+            //     CardUI.Instance.ShowCardData(cardEntity, cardInfo, cardEntity.Get<PointsLeftRight>());
+            // }
+            // else if (cardEntity.Has<SkillsLeftRight>())
+            // {
+            //     SetActiveCardUi();
+            //     CardUI.Instance.ShowCardData(cardEntity, cardInfo, cardEntity.Get<SkillsLeftRight>());
+            // }
+            // else if (cardEntity.Has<PointsLeftRight>() && cardEntity.Has<SkillsCheck>())
+            // {
+            //     SetActiveCardUi();
+            //     CardUI.Instance.ShowCardData(cardEntity, cardInfo,
+            //         cardEntity.Get<PointsLeftRight>(), cardEntity.Get<SkillsCheck>());
+            // }
+            // else if (cardEntity.Has<Trade>())
+            // {
+            //     SetActiveTradeUi();
+            //     TradeUI.Instance.ShowCard(cardEntity.Get<Trade>());
+            // }
+            // else if (cardEntity.Get<CardInfo>().cardType == CardType.EndOfDay)
+            // {
+            //     EndOfDayUI.Instance.SetData(gameContext.dayNumber);
+            //     SetActiveEndOfDayUi();
+            // }
+            // else
+            // {
+            //     Debug.LogError("This card is not known type " + cardEntity);
+            // }
+        }
+        
         if (gameContext.dayCards.Count == 0)
         {
             return;
@@ -21,52 +64,8 @@ internal class CardsViewSystem : IEcsRunSystem
             SetActiveEndOfGame();
             return;
         }
+
         
-        if (!gameContext.currentCard.HasValue || !gameContext.currentCard.Value.IsAlive())
-        {
-            EcsEntity cardEntity = gameContext.dayCards[0];
-            gameContext.dayCards.Remove(cardEntity);
-
-            if (!cardEntity.IsAlive())
-            {
-                Debug.LogError("Card entity " + cardEntity + " is not alive");
-            }
-
-            gameContext.currentCard = cardEntity;
-            ref CardInfo cardInfo = ref cardEntity.Get<CardInfo>();
-
-            //todo unify card check logic
-            if (cardEntity.Has<PointsLeftRight>() && !cardEntity.Has<SkillsCheck>())
-            {
-                SetActiveCardUi();
-                CardUI.Instance.ShowCardData(cardEntity, cardInfo, cardEntity.Get<PointsLeftRight>());
-            }
-            else if (cardEntity.Has<SkillsLeftRight>())
-            {
-                SetActiveCardUi();
-                CardUI.Instance.ShowCardData(cardEntity, cardInfo, cardEntity.Get<SkillsLeftRight>());
-            }
-            else if (cardEntity.Has<PointsLeftRight>() && cardEntity.Has<SkillsCheck>())
-            {
-                SetActiveCardUi();
-                CardUI.Instance.ShowCardData(cardEntity, cardInfo,
-                    cardEntity.Get<PointsLeftRight>(), cardEntity.Get<SkillsCheck>());
-            }
-            else if (cardEntity.Has<Trade>())
-            {
-                SetActiveTradeUi();
-                TradeUI.Instance.ShowCard(cardEntity.Get<Trade>());
-            }
-            else if (cardEntity.Get<CardInfo>().cardType == CardType.EndOfDay)
-            {
-                EndOfDayUI.Instance.SetData(gameContext.dayNumber);
-                SetActiveEndOfDayUi();
-            }
-            else
-            {
-                Debug.LogError("This card is not known type " + cardEntity);
-            }
-        }
     }
 
     private static void SetActiveEndOfGame()
@@ -90,12 +89,11 @@ internal class CardsViewSystem : IEcsRunSystem
         TradeUI.Instance.gameObject.SetActive(true);
         EndOfDayUI.Instance.gameObject.SetActive(false);
     }
-    
+
     private static void SetActiveCardUi()
     {
         CardUI.Instance.gameObject.SetActive(true);
         TradeUI.Instance.gameObject.SetActive(false);
         EndOfDayUI.Instance.gameObject.SetActive(false);
     }
-
 }

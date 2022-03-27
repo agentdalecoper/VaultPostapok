@@ -11,6 +11,13 @@
       },
       "hash": "5ba81f24853d9cd2c239f5925a2104b0e66bf11a"
     },
+    "com.github.siccity.serializablecallback": {
+      "version": "git+https://github.com/Siccity/SerializableCallback.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "7ff19f122305b6adb47bbee6c8e36e77cb471fb0"
+    },
     "com.leopotam.ecs": {
       "version": "https://github.com/Leopotam/ecs.git",
       "depth": 0,
@@ -24,6 +31,13 @@
       "source": "git",
       "dependencies": {},
       "hash": "127d6a8f02ec987ac724a7fc671b1d5d00b0ea56"
+    },
+    "com.seneral.undopro": {
+      "version": "https://github.com/Seneral/UndoPro.git#release-pkg",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "6a77de2ea6e53ed1b69b149d97217db4a17a4f95"
     },
     "com.unity.2d.animation": {
       "version": "7.0.3",

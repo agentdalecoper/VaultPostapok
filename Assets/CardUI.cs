@@ -15,6 +15,7 @@ public class CardUI : MonoBehaviour
     public Button buttonRight;
     public TextMeshProUGUI text;
     public DiceView diceView;
+    public Image image;
 
     TaskCompletionSource<bool> isWaitingUiDelay = new TaskCompletionSource<bool>();
 
@@ -36,6 +37,14 @@ public class CardUI : MonoBehaviour
         
         diceView.gameObject.SetActive(false);
     }
+    
+    public async void ShowCardData(EcsEntity cardEntity, CardInfo cardInfo)
+    {
+        DeActivateDiceView();
+        text.text = cardInfo.text;
+        image.sprite = cardInfo.sprite;
+    }
+
 
     public async void ShowCardData(EcsEntity cardEntity, CardInfo cardInfo, PointsLeftRight pointsLeftRight)
     {

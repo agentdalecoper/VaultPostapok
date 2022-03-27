@@ -27,7 +27,7 @@ public class CardsInitSystem : IEcsRunSystem
 
             foreach (CardObject cardObject in day.cardsObjects)
             {
-                EcsEntity cardEntity = SkillsCheckCard(cardObject);
+                EcsEntity cardEntity = CreateCard(cardObject);
                 gameContext.dayCards.Add(cardEntity);
             }
 
@@ -36,7 +36,7 @@ public class CardsInitSystem : IEcsRunSystem
         }
     }
 
-    private EcsEntity SkillsCheckCard(CardObject cardObject)
+    private EcsEntity CreateCard(CardObject cardObject)
     {
         if (cardObject.cardType == CardType.SwipePoints)
         {
