@@ -17,9 +17,26 @@ internal class CardsViewSystem : IEcsRunSystem
         {
             EcsEntity cardEntity = renderFilter.GetEntity(0);
             ref CardInfo cardInfo = ref cardEntity.Get<CardInfo>();
-            CardUI.Instance.ShowCardData(cardEntity, cardInfo);
 
             Debug.Log("Show card " + cardEntity + " " + cardInfo.text);
+
+            if (cardInfo.cardObject.tradeTest.IsSet)
+            {
+                SetActiveTradeUi();
+                TradeUI.Instance.ShowCard(cardInfo.cardObject.tradeTest.Value);
+            }
+            else if (cardInfo.cardObject.skillsCheck.IsSet)
+            {
+                SetActiveCardUi();
+                CardUI.Instance.ShowCardData(cardEntity, cardInfo, cardInfo.cardObject.skillsCheck.Value);
+            }
+            else
+            {
+                SetActiveCardUi();
+                CardUI.Instance.ShowCardData(cardEntity, cardInfo);
+            }
+
+            
             // //todo unify card check logic
             // if (cardEntity.Has<PointsLeftRight>() && !cardEntity.Has<SkillsCheck>())
             // {

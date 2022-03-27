@@ -75,7 +75,7 @@ sealed class EcsStartupManager : MonoBehaviour
             .Add(new NodeSystem())
             // .Add(new CardsInitSystem())
             .Add(new CardInputSystem())
-            .Add(new NextCardSystem())
+            // .Add(new NextCardSystem())
             .Add(new CardsViewSystem())
             .Add(new CardsMechanicsSystem())
             .Add(new DiceSystem())
@@ -189,6 +189,7 @@ internal class NodeSystem : IEcsRunSystem
             IEnumerable<CardNode> startNodes = canvas
                 .nodes
                 .OfType<CardNode>()
+                .OrderBy(node => node.rect.y)
                 .Where(node => node.frinPreviousIN.connections.Count == 0);
         
             foreach (CardNode startNode in startNodes)

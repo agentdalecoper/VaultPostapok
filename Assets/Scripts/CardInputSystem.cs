@@ -26,7 +26,10 @@ internal class CardInputSystem : IEcsRunSystem
             EcsEntity currentCard = gameContext.currentCard.Value;
             ref CardInfo cardInfo = ref currentCard.Get<CardInfo>();
 
-            if (swipeDirection == SwipeDirection.Left)
+            if (cardInfo.nextCards.Count == 0)
+            {
+            }
+            else if (swipeDirection == SwipeDirection.Left)
             {
                 gameContext.currentCard = cardInfo.nextCards[0];
             }
@@ -36,41 +39,58 @@ internal class CardInputSystem : IEcsRunSystem
             }
 
             gameContext.currentCard.Value.Get<Render>();
-            
-            // if (currentCard.Has<SkillsLeftRight>())
-            // {
-            //     SkillsLeftRight skillsLeftRight = currentCard.Get<SkillsLeftRight>();
-            //     SkillsComponent skillsComponent = skillsLeftRight.GetSwipe(swipeDirection);
-            //     SkillsSystem.Instance.CreateSkillsUpdate(skillsComponent);
-            // }
-            // else if (currentCard.Has<PointsLeftRight>() && !currentCard.Has<SkillsCheck>())
-            // {
-            //     PointsLeftRight pointsLeftRight = currentCard.Get<PointsLeftRight>();
-            //     PointsComponent pointsComponent = pointsLeftRight.GetSwipe(swipeDirection);
-            //     PointsSystem.ChangePoints(pointsComponent);
-            // }
-            // else if (currentCard.Has<PointsLeftRight>() && currentCard.Has<SkillsCheck>())
-            // {
-            // }
-            // else if (currentCard.Has<Trade>())
-            // {
-            // }
-            // else if(currentCard.Get<CardInfo>().cardType == CardType.EndOfDay)
-            // {
-            //     PointsSystem.ChangePoints(sceneConfiguration.hungerEndOfDayPoints);
-            //     EcsEntity entity = ecsWorld.NewEntity();
-            //     entity.Get<EndOfDay>();
-            // }
-            // else
-            // {
-            //     Debug.LogError("Swiped but current card is not a swipe card or skill choose card " + currentCard);
-            //     return;
-            // }
 
             Debug.Log("Destroying card " + currentCard);
             currentCard.Destroy();
         }
+        if (!gameContext.currentCard.HasValue || !gameContext.currentCard.Value.IsAlive())
+        {
+            EcsEntity cardEntity = gameContext.dayCards[0];
+            gameContext.dayCards.Remove(cardEntity);
+
+            Debug.Log("Next card is " + cardEntity + " " + cardEntity.Get<CardInfo>().text);
+            
+            if (!cardEntity.IsAlive())
+            {
+                Debug.LogError("Card entity " + cardEntity + " is not alive");
+            }
+            
+            gameContext.currentCard = cardEntity;
+            ref CardInfo cardInfo = ref cardEntity.Get<CardInfo>();
+            cardEntity.Get<Render>();
+        }
     }
+    
+      
+    // if (currentCard.Has<SkillsLeftRight>())
+    // {
+    //     SkillsLeftRight skillsLeftRight = currentCard.Get<SkillsLeftRight>();
+    //     SkillsComponent skillsComponent = skillsLeftRight.GetSwipe(swipeDirection);
+    //     SkillsSystem.Instance.CreateSkillsUpdate(skillsComponent);
+    // }
+    // else if (currentCard.Has<PointsLeftRight>() && !currentCard.Has<SkillsCheck>())
+    // {
+    //     PointsLeftRight pointsLeftRight = currentCard.Get<PointsLeftRight>();
+    //     PointsComponent pointsComponent = pointsLeftRight.GetSwipe(swipeDirection);
+    //     PointsSystem.ChangePoints(pointsComponent);
+    // }
+    // else if (currentCard.Has<PointsLeftRight>() && currentCard.Has<SkillsCheck>())
+    // {
+    // }
+    // else if (currentCard.Has<Trade>())
+    // {
+    // }
+    // else if(currentCard.Get<CardInfo>().cardType == CardType.EndOfDay)
+    // {
+    //     PointsSystem.ChangePoints(sceneConfiguration.hungerEndOfDayPoints);
+    //     EcsEntity entity = ecsWorld.NewEntity();
+    //     entity.Get<EndOfDay>();
+    // }
+    // else
+    // {
+    //     Debug.LogError("Swiped but current card is not a swipe card or skill choose card " + currentCard);
+    //     return;
+    // }
 }
 
 internal struct Render

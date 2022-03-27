@@ -63,15 +63,11 @@ public class CardUI : MonoBehaviour
         
     }
 
-    public async void ShowCardData(EcsEntity cardEntity, CardInfo cardInfo, PointsLeftRight pointsLeftRight,
-        SkillsCheck skillsCheck)
+    public async void ShowCardData(EcsEntity cardEntity, CardInfo cardInfo, SkillsCheck skillsCheck)
     {
-        await isWaitingUiDelay.Task;
-
         ActivateDiceView();
-        text.text = " Skills to check" + skillsCheck.skillsToCheck
-                                       + " Left points: " + pointsLeftRight.left + " Right points: " +
-                                       pointsLeftRight.right;
+        text.text = cardInfo.text;
+        image.sprite = cardInfo.sprite;
         diceView.text.text = 0.ToString();
     }
     
@@ -111,8 +107,8 @@ public class CardUI : MonoBehaviour
         diceView.GetComponent<Image>().color = Color.white;
 
         diceView.gameObject.SetActive(true);
-        buttonLeft.gameObject.SetActive(false);
-        buttonRight.gameObject.SetActive(false);
+        // buttonLeft.gameObject.SetActive(false);
+        // buttonRight.gameObject.SetActive(false);
     }
 
     private void DeActivateDiceView()

@@ -80,6 +80,63 @@ MonoBehaviour:
   side: 4
   sidePosition: 50
   sideOffset: 0
+--- !u!114 &-7536008984530504926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
+  m_Name: Card node
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 11400000}
+  position: {x: -503.51996, y: 1353.74}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  CharacterName: CharacterId
+  CharacterPotrait: {fileID: 0}
+  DialogLine: 
+  ItemsToAdd: 
+  SoundDialog: {fileID: 0}
+  frinPreviousIN: {fileID: 8244591960068253553}
+  toPreviousOUT: {fileID: -3097619922661974926}
+  fromNextIN: {fileID: 276115868488066040}
+  _options: []
+  actionsOnEnter: []
+  cardObject:
+    points:
+      IsSet: 0
+      Value:
+        money: 0
+        food: 0
+        hull: 0
+    skillsComponent:
+      IsSet: 0
+      Value:
+        fighting: 0
+        science: 0
+        mechanical: 0
+        survival: 0
+        charisma: 0
+    skillsCheck:
+      IsSet: 1
+      Value:
+        skillsToCheck:
+          fighting: 1
+          science: 0
+          mechanical: 0
+          survival: 0
+          charisma: 0
+    tradeTest:
+      IsSet: 0
+      Value:
+        skillsComponents: []
+        skillComponentsCosts: 
+        pointsComponents: []
+        pointsComponentsCosts: 
 --- !u!114 &-7353607124333562285
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,7 +156,7 @@ MonoBehaviour:
   _connections:
   - {fileID: 6227915751995456210}
   side: 2
-  sidePosition: 269
+  sidePosition: 268
   sideOffset: 0
 --- !u!114 &-7163404202504963314
 MonoBehaviour:
@@ -178,7 +235,7 @@ MonoBehaviour:
   _connections:
   - {fileID: 4146770409137313645}
   side: 2
-  sidePosition: 269
+  sidePosition: 268
   sideOffset: 0
 --- !u!114 &-6117779734182252027
 MonoBehaviour:
@@ -199,6 +256,26 @@ MonoBehaviour:
   _connections: []
   side: 4
   sidePosition: 30
+  sideOffset: 0
+--- !u!114 &-4228340371768457622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: To Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: -363954700165089596}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 4
+  sidePosition: 50
   sideOffset: 0
 --- !u!114 &-4055594008548828112
 MonoBehaviour:
@@ -466,6 +543,26 @@ MonoBehaviour:
   side: 2
   sidePosition: 50
   sideOffset: 0
+--- !u!114 &-3097619922661974926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: To Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: -7536008984530504926}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 4
+  sidePosition: 50
+  sideOffset: 0
 --- !u!114 &-2318624364352106647
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -607,6 +704,84 @@ MonoBehaviour:
   side: 2
   sidePosition: 30
   sideOffset: 0
+--- !u!114 &-363954700165089596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
+  m_Name: Card node
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 11400000}
+  position: {x: -538.34, y: 2154.6147}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  CharacterName: Trade
+  CharacterPotrait: {fileID: 0}
+  DialogLine: lelele
+  ItemsToAdd: 
+  SoundDialog: {fileID: 0}
+  frinPreviousIN: {fileID: 8584496303173863994}
+  toPreviousOUT: {fileID: -4228340371768457622}
+  fromNextIN: {fileID: 3218579759078697576}
+  _options: []
+  actionsOnEnter: []
+  cardObject:
+    points:
+      IsSet: 0
+      Value:
+        money: 0
+        food: 0
+        hull: 0
+    skillsComponent:
+      IsSet: 0
+      Value:
+        fighting: 0
+        science: 0
+        mechanical: 0
+        survival: 0
+        charisma: 0
+    skillsCheck:
+      IsSet: 0
+      Value:
+        skillsToCheck:
+          fighting: 0
+          science: 0
+          mechanical: 0
+          survival: 0
+          charisma: 0
+    tradeTest:
+      IsSet: 1
+      Value:
+        skillsComponents:
+        - fighting: 1
+          science: 0
+          mechanical: 0
+          survival: 0
+          charisma: 0
+        - fighting: 0
+          science: 1
+          mechanical: 0
+          survival: 0
+          charisma: 0
+        - fighting: 0
+          science: 0
+          mechanical: 1
+          survival: 0
+          charisma: 0
+        skillComponentsCosts: 010000000100000001000000
+        pointsComponents:
+        - money: 0
+          food: 1
+          hull: 0
+        - money: 0
+          food: 0
+          hull: 1
+        pointsComponentsCosts: 0100000001000000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,6 +805,8 @@ MonoBehaviour:
   - {fileID: -3655155195473100331}
   - {fileID: -7163404202504963314}
   - {fileID: 4273400234196848716}
+  - {fileID: -363954700165089596}
+  - {fileID: -7536008984530504926}
   groups: []
   Name: Dialog
 --- !u!114 &60930425494725965
@@ -646,9 +823,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 11400000}
   parentEditor: {fileID: 0}
-  selectedNode: {fileID: 2726790537304899875}
-  panOffset: {x: -620.31006, y: -508.55997}
-  zoom: 1.48
+  selectedNode: {fileID: 0}
+  panOffset: {x: 60.83998, y: -1588.7301}
+  zoom: 1.96
+--- !u!114 &276115868488066040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Next
+  m_EditorClassIdentifier: 
+  body: {fileID: -7536008984530504926}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 2
+  sidePosition: 50
+  sideOffset: 0
 --- !u!114 &285119545488821080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -763,7 +960,7 @@ MonoBehaviour:
   m_Name: Card node
   m_EditorClassIdentifier: 
   canvas: {fileID: 11400000}
-  position: {x: 250.53, y: 210.28998}
+  position: {x: 119.20999, y: 347.49}
   dynamicConnectionPorts:
   - {fileID: -6658334993674983745}
   - {fileID: 8456056857040174995}
@@ -813,6 +1010,26 @@ MonoBehaviour:
         skillComponentsCosts: 
         pointsComponents: []
         pointsComponentsCosts: 
+--- !u!114 &3218579759078697576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Next
+  m_EditorClassIdentifier: 
+  body: {fileID: -363954700165089596}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 2
+  sidePosition: 50
+  sideOffset: 0
 --- !u!114 &3810763482087178640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -970,7 +1187,7 @@ MonoBehaviour:
   _connections:
   - {fileID: -850252514294057685}
   side: 2
-  sidePosition: 332
+  sidePosition: 330
   sideOffset: 0
 --- !u!114 &5254973603791428284
 MonoBehaviour:
@@ -1219,6 +1436,26 @@ MonoBehaviour:
   side: 4
   sidePosition: 50
   sideOffset: 0
+--- !u!114 &8244591960068253553
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: From Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: -7536008984530504926}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: DialogForward
+  _connections: []
+  side: 4
+  sidePosition: 30
+  sideOffset: 0
 --- !u!114 &8456056857040174995
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1238,7 +1475,27 @@ MonoBehaviour:
   _connections:
   - {fileID: 1808010091176942923}
   side: 2
-  sidePosition: 332
+  sidePosition: 330
+  sideOffset: 0
+--- !u!114 &8584496303173863994
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: From Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: -363954700165089596}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: DialogForward
+  _connections: []
+  side: 4
+  sidePosition: 30
   sideOffset: 0
 --- !u!114 &8765952513219816887
 MonoBehaviour:
