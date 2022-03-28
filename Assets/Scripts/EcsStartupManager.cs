@@ -7,6 +7,7 @@ using Leopotam.Ecs;
 using MyBox.Internal;
 using SwipeableView;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [Serializable]
 public struct Trade
@@ -76,14 +77,14 @@ sealed class EcsStartupManager : MonoBehaviour
             // .Add(new CardsInitSystem())
             .Add(new CardInputSystem())
             // .Add(new NextCardSystem())
-            .Add(new CardsViewSystem())
             .Add(new CardsMechanicsSystem())
-            .Add(new DiceSystem())
+            // .Add(new DiceSystem())
             .Add(pointsSystem)
             .Add(new SwipeSystem())
             .Add(new SkillsSystem())
-            .Add(new SkillsRollSystem())
+            .Add(new SkillsCheckSystem())
             .Add(new TradeSystem())
+            .Add(new CardsViewSystem())
             .Add(new EndOfDaySystem())
             .Add(new EndOfGameSystem())
             .Inject(sceneConfiguration)
@@ -127,22 +128,25 @@ internal class CardsMechanicsSystem : IEcsRunSystem
             EcsEntity cardEntity = renderFilter.GetEntity(0);
             ref CardInfo cardInfo = ref cardEntity.Get<CardInfo>();
 
-            if (cardInfo.cardObject.skillsComponent.IsSet)
+            if (cardEntity.Has<SkillsComponent>())
             {
-                SkillsSystem.Instance.CreateSkillsUpdate(cardInfo.cardObject.skillsComponent.Value);
+                SkillsSystem.Instance.CreateSkillsUpdate(cardEntity.Get<SkillsComponent>());
             }
 
-            if (cardInfo.cardObject.points.IsSet)
+            if (cardEntity.Has<PointsComponent>())
             {
-                PointsSystem.ChangePoints(cardInfo.cardObject.points.Value);
+                PointsSystem.ChangePoints(cardEntity.Get<PointsComponent>());
             }
 
-            if (cardInfo.cardObject.skillsCheck.IsSet)
+            if (cardEntity.Has<SkillsCheck>())
+            {
+                DiceRoll roll = new DiceRoll {roll = Random.Range(0, 7)};
+                cardEntity.Replace(roll);
+            }
+            
+            if (cardEntity.Has<Trade>())
             {
             }
-            // else if (currentCard.Has<Trade>())
-            // {
-            // }
         }
     }
 }
@@ -233,8 +237,24 @@ internal class NodeSystem : IEcsRunSystem
         cardInfo.cardNode = node;
         cardInfo.nextCards = new List<EcsEntity>();
         cardInfo.actionsOnEnter = node.actionsOnEnter;
-        cardInfo.cardObject = node.cardObject;
         cardInfo.audioClip = node.SoundDialog;
+        if (node.cardObject.points.IsSet)
+        {
+            entity.Replace(node.cardObject.points.Value);
+        }
+        if (node.cardObject.skillsCheck.IsSet)
+        {
+            entity.Replace(node.cardObject.skillsCheck.Value);
+        }
+        if (node.cardObject.skillsComponent.IsSet)
+        {
+            entity.Replace(node.cardObject.skillsComponent.Value);
+        }
+        if (node.cardObject.tradeTest.IsSet)
+        {
+            entity.Replace(node.cardObject.tradeTest.Value);
+        }
+        
         return cardInfo;
     }
 }
@@ -246,6 +266,7 @@ internal struct CreateCard
 public struct DiceRoll
 {
     public int roll;
+    public bool success;
 }
 
 public struct DiceClick
@@ -270,7 +291,6 @@ public struct CardInfo
     public CardType cardType;
     public List<EcsEntity> nextCards;
     public DialogAction[] actionsOnEnter;
-    public CardTest cardObject;
 
     public AudioClip audioClip;
     public CardNode cardNode;

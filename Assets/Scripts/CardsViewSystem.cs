@@ -1,3 +1,4 @@
+using Client;
 using Leopotam.Ecs;
 using SwipeableView;
 using UnityEngine;
@@ -20,15 +21,18 @@ internal class CardsViewSystem : IEcsRunSystem
 
             Debug.Log("Show card " + cardEntity + " " + cardInfo.text);
 
-            if (cardInfo.cardObject.tradeTest.IsSet)
+            if (cardEntity.Has<Trade>())
             {
                 SetActiveTradeUi();
-                TradeUI.Instance.ShowCard(cardInfo.cardObject.tradeTest.Value);
+                TradeUI.Instance.ShowCard(cardEntity.Get<Trade>());
             }
-            else if (cardInfo.cardObject.skillsCheck.IsSet)
+            else if (cardEntity.Has<SkillsCheck>() && cardEntity.Has<DiceRoll>())
             {
                 SetActiveCardUi();
-                CardUI.Instance.ShowCardData(cardEntity, cardInfo, cardInfo.cardObject.skillsCheck.Value);
+                CardUI.Instance.ShowCardData(cardEntity, cardInfo, cardEntity.Get<SkillsCheck>());
+                CardUI.Instance.ShowDiceData(cardEntity.Get<DiceRoll>(),
+                    cardEntity.Get<DiceRoll>().success, cardEntity.Get<SkillsCheck>(),
+                    gameContext.playerSkills);
             }
             else
             {

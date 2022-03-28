@@ -80,6 +80,26 @@ MonoBehaviour:
   side: 4
   sidePosition: 50
   sideOffset: 0
+--- !u!114 &-7951590882216045617
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Next
+  m_EditorClassIdentifier: 
+  body: {fileID: -5333420751820114084}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 2
+  sidePosition: 50
+  sideOffset: 0
 --- !u!114 &-7536008984530504926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -93,7 +113,7 @@ MonoBehaviour:
   m_Name: Card node
   m_EditorClassIdentifier: 
   canvas: {fileID: 11400000}
-  position: {x: -503.51996, y: 1353.74}
+  position: {x: -539.12, y: 1160.92}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
   CharacterName: CharacterId
@@ -156,7 +176,7 @@ MonoBehaviour:
   _connections:
   - {fileID: 6227915751995456210}
   side: 2
-  sidePosition: 268
+  sidePosition: 268.75
   sideOffset: 0
 --- !u!114 &-7163404202504963314
 MonoBehaviour:
@@ -171,7 +191,7 @@ MonoBehaviour:
   m_Name: Card node
   m_EditorClassIdentifier: 
   canvas: {fileID: 11400000}
-  position: {x: 919.97003, y: 253.13}
+  position: {x: 768.91003, y: 267.69}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
   CharacterName: CharacterId
@@ -235,7 +255,7 @@ MonoBehaviour:
   _connections:
   - {fileID: 4146770409137313645}
   side: 2
-  sidePosition: 268
+  sidePosition: 268.75
   sideOffset: 0
 --- !u!114 &-6117779734182252027
 MonoBehaviour:
@@ -257,6 +277,63 @@ MonoBehaviour:
   side: 4
   sidePosition: 30
   sideOffset: 0
+--- !u!114 &-5333420751820114084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
+  m_Name: Card node
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 11400000}
+  position: {x: -542.40985, y: 1868.0999}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  CharacterName: CharacterId
+  CharacterPotrait: {fileID: 0}
+  DialogLine: Rawr
+  ItemsToAdd: 
+  SoundDialog: {fileID: 0}
+  frinPreviousIN: {fileID: 4719960661947155216}
+  toPreviousOUT: {fileID: 1483878037189228759}
+  fromNextIN: {fileID: -7951590882216045617}
+  _options: []
+  actionsOnEnter: []
+  cardObject:
+    points:
+      IsSet: 0
+      Value:
+        money: 0
+        food: 0
+        hull: 0
+    skillsComponent:
+      IsSet: 0
+      Value:
+        fighting: 0
+        science: 0
+        mechanical: 0
+        survival: 0
+        charisma: 0
+    skillsCheck:
+      IsSet: 0
+      Value:
+        skillsToCheck:
+          fighting: 0
+          science: 0
+          mechanical: 0
+          survival: 0
+          charisma: 0
+    tradeTest:
+      IsSet: 0
+      Value:
+        skillsComponents: []
+        skillComponentsCosts: 
+        pointsComponents: []
+        pointsComponentsCosts: 
 --- !u!114 &-4228340371768457622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -367,7 +444,7 @@ MonoBehaviour:
   m_Name: Card node
   m_EditorClassIdentifier: 
   canvas: {fileID: 11400000}
-  position: {x: 233, y: -209.5}
+  position: {x: 505.05, y: -374.75}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
   CharacterName: CharacterId2
@@ -396,10 +473,10 @@ MonoBehaviour:
         survival: 0
         charisma: 0
     skillsCheck:
-      IsSet: 0
+      IsSet: 1
       Value:
         skillsToCheck:
-          fighting: 0
+          fighting: 1
           science: 0
           mechanical: 0
           survival: 0
@@ -717,7 +794,7 @@ MonoBehaviour:
   m_Name: Card node
   m_EditorClassIdentifier: 
   canvas: {fileID: 11400000}
-  position: {x: -538.34, y: 2154.6147}
+  position: {x: -529.24005, y: 2445.8147}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
   CharacterName: Trade
@@ -807,6 +884,7 @@ MonoBehaviour:
   - {fileID: 4273400234196848716}
   - {fileID: -363954700165089596}
   - {fileID: -7536008984530504926}
+  - {fileID: -5333420751820114084}
   groups: []
   Name: Dialog
 --- !u!114 &60930425494725965
@@ -824,8 +902,8 @@ MonoBehaviour:
   canvas: {fileID: 11400000}
   parentEditor: {fileID: 0}
   selectedNode: {fileID: 0}
-  panOffset: {x: 60.83998, y: -1588.7301}
-  zoom: 1.96
+  panOffset: {x: -349.3601, y: -298.52972}
+  zoom: 1.17
 --- !u!114 &276115868488066040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -885,6 +963,26 @@ MonoBehaviour:
   _connections: []
   side: 4
   sidePosition: 30
+  sideOffset: 0
+--- !u!114 &1483878037189228759
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: To Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: -5333420751820114084}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 4
+  sidePosition: 50
   sideOffset: 0
 --- !u!114 &1808010091176942923
 MonoBehaviour:
@@ -960,13 +1058,14 @@ MonoBehaviour:
   m_Name: Card node
   m_EditorClassIdentifier: 
   canvas: {fileID: 11400000}
-  position: {x: 119.20999, y: 347.49}
+  position: {x: 64.20999, y: 479.49}
   dynamicConnectionPorts:
   - {fileID: -6658334993674983745}
   - {fileID: 8456056857040174995}
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
   CharacterName: CharacterId3
-  CharacterPotrait: {fileID: 0}
+  CharacterPotrait: {fileID: -252334310618181308, guid: c38b542d729504de0b93a9d53506fae8,
+    type: 3}
   DialogLine: gegege
   ItemsToAdd: 
   SoundDialog: {fileID: 0}
@@ -1104,7 +1203,7 @@ MonoBehaviour:
   m_Name: Card node
   m_EditorClassIdentifier: 
   canvas: {fileID: 11400000}
-  position: {x: 921.2301, y: 765.02997}
+  position: {x: 717.39014, y: 848.75}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
   CharacterName: CharacterId
@@ -1148,6 +1247,26 @@ MonoBehaviour:
         skillComponentsCosts: 
         pointsComponents: []
         pointsComponentsCosts: 
+--- !u!114 &4719960661947155216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: From Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: -5333420751820114084}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: DialogForward
+  _connections: []
+  side: 4
+  sidePosition: 30
+  sideOffset: 0
 --- !u!114 &4885400181816127320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1187,7 +1306,7 @@ MonoBehaviour:
   _connections:
   - {fileID: -850252514294057685}
   side: 2
-  sidePosition: 330
+  sidePosition: 331.75
   sideOffset: 0
 --- !u!114 &5254973603791428284
 MonoBehaviour:
@@ -1475,7 +1594,7 @@ MonoBehaviour:
   _connections:
   - {fileID: 1808010091176942923}
   side: 2
-  sidePosition: 330
+  sidePosition: 331.75
   sideOffset: 0
 --- !u!114 &8584496303173863994
 MonoBehaviour:
