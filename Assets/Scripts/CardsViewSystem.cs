@@ -37,7 +37,18 @@ internal class CardsViewSystem : IEcsRunSystem
             else
             {
                 SetActiveCardUi();
-                CardUI.Instance.ShowCardData(cardEntity, cardInfo);
+                if (cardInfo.nextCards.Count == 2)
+                {
+                    Debug.Log("showing card with two options " + cardEntity);
+                    CardUI.Instance.ShowCardData(cardEntity, cardInfo,
+                        cardEntity.Get<SkillsCheck>(),
+                        cardInfo.nextCards[0].Get<CardInfo>().dialogOption,
+                        cardInfo.nextCards[1].Get<CardInfo>().dialogOption);
+                }
+                else
+                {
+                    CardUI.Instance.ShowCardData(cardEntity, cardInfo);
+                }
             }
 
             

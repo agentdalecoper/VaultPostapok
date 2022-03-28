@@ -536,9 +536,9 @@ MonoBehaviour:
   toPreviousOUT: {fileID: -2318624364352106647}
   fromNextIN: {fileID: 3810763482087178640}
   _options:
-  - text: Write Here
+  - text: Test first dialog
     conditions: []
-  - text: Write Here
+  - text: Test second dialog
     conditions: []
   actionsOnEnter: []
   cardObject:
@@ -902,8 +902,8 @@ MonoBehaviour:
   canvas: {fileID: 11400000}
   parentEditor: {fileID: 0}
   selectedNode: {fileID: 0}
-  panOffset: {x: -349.3601, y: -298.52972}
-  zoom: 1.17
+  panOffset: {x: -233.35013, y: -211.62973}
+  zoom: 1.25
 --- !u!114 &276115868488066040
 MonoBehaviour:
   m_ObjectHideFlags: 1
