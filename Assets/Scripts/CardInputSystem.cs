@@ -31,14 +31,22 @@ internal class CardInputSystem : IEcsRunSystem
             }
             else if (swipeDirection == SwipeDirection.Left)
             {
-                gameContext.currentCard = cardInfo.nextCards[0];
+                if (!cardInfo.nextCards[0].Has<CardStub>())
+                {
+                    gameContext.currentCard = cardInfo.nextCards[0];
+                    gameContext.currentCard.Value.Get<Render>();
+                    Debug.Log("next card is left card " + gameContext.currentCard);
+                }
             }
             else
             {
-                gameContext.currentCard = cardInfo.nextCards[1];
+                if (!cardInfo.nextCards[1].Has<CardStub>())
+                {
+                    gameContext.currentCard = cardInfo.nextCards[1];
+                    gameContext.currentCard.Value.Get<Render>();
+                    Debug.Log("next card is right card " + gameContext.currentCard);
+                }
             }
-
-            gameContext.currentCard.Value.Get<Render>();
 
             Debug.Log("Destroying card " + currentCard);
             currentCard.Destroy();
@@ -57,8 +65,9 @@ internal class CardInputSystem : IEcsRunSystem
             
             gameContext.currentCard = cardEntity;
             ref CardInfo cardInfo = ref cardEntity.Get<CardInfo>();
-            cardEntity.Get<Render>();
+            gameContext.currentCard.Value.Get<Render>();
         }
+        
     }
     
       

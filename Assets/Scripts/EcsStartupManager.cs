@@ -217,6 +217,19 @@ internal class NodeSystem : IEcsRunSystem
 
         for (var i = 0; i < node._options.Count; i++)
         {
+            if (node.dynamicConnectionPorts.Count == 0)
+            {
+                break;
+            }
+
+            if (!node.dynamicConnectionPorts[i].connected())
+            {
+                var cardStub = ecsWorld.NewEntity();
+                cardStub.Get<CardStub>();
+                cardInfo.nextCards.Add(cardStub);
+                continue;
+            }
+            
             CardNode childNode = node.dynamicConnectionPorts[i].connection(0).body as CardNode;
             EcsEntity childEntity = CreateCard(childNode);
             ref var childCardInfo = ref childEntity.Get<CardInfo>();
@@ -257,6 +270,10 @@ internal class NodeSystem : IEcsRunSystem
         
         return cardInfo;
     }
+}
+
+public struct CardStub
+{
 }
 
 internal struct CreateCard

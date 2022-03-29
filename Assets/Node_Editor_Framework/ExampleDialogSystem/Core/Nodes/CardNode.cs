@@ -23,7 +23,7 @@ public class CardNode : BaseDialogNode
 	public override Type GetObjectType { get { return typeof(CardNode); } }
 
 	//previous node connections
-	[ValueConnectionKnob("From Previous", Direction.In, "DialogForward", NodeSide.Left, 30)]
+	[ValueConnectionKnob("From Previous", Direction.In, "DialogForward", ConnectionCount.Max, NodeSide.Left, 30)]
 	public ValueConnectionKnob frinPreviousIN;
 	[ConnectionKnob("To Previous", Direction.Out, "DialogBack", NodeSide.Left, 50)]
 	public ConnectionKnob toPreviousOUT;
