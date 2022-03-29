@@ -217,6 +217,8 @@ internal class NodeSystem : IEcsRunSystem
 
         for (var i = 0; i < node._options.Count; i++)
         {
+            DialogOption dialogOption = node._options[i];
+
             if (node.dynamicConnectionPorts.Count == 0)
             {
                 break;
@@ -227,14 +229,14 @@ internal class NodeSystem : IEcsRunSystem
                 var cardStub = ecsWorld.NewEntity();
                 cardStub.Get<CardStub>();
                 cardInfo.nextCards.Add(cardStub);
+                cardStub.Replace(dialogOption);
                 continue;
             }
             
             CardNode childNode = node.dynamicConnectionPorts[i].connection(0).body as CardNode;
             EcsEntity childEntity = CreateCard(childNode);
             ref var childCardInfo = ref childEntity.Get<CardInfo>();
-            DialogOption dialogOption = node._options[i];
-            childCardInfo.dialogOption = dialogOption;
+            childEntity.Replace(dialogOption);
             
             cardInfo.nextCards.Add(childEntity);
         }
@@ -311,7 +313,6 @@ public struct CardInfo
 
     public AudioClip audioClip;
     public CardNode cardNode;
-    public DialogOption dialogOption;
 }
 
 [Serializable]

@@ -64,7 +64,7 @@ public class CardUI : MonoBehaviour
     }
 
     public async void ShowCardData(EcsEntity cardEntity, CardInfo cardInfo, SkillsCheck skillsCheck, 
-        DialogOption leftOption = null, DialogOption rightOption = null)
+        DialogOption? leftOption = null, DialogOption? rightOption = null)
     {
         ActivateDiceView();
         text.text = cardInfo.text;
@@ -73,12 +73,12 @@ public class CardUI : MonoBehaviour
 
         if (leftOption != null)
         {
-            buttonLeft.GetComponentInChildren<TextMeshProUGUI>().text = leftOption.text;
+            buttonLeft.GetComponentInChildren<TextMeshProUGUI>().text = leftOption.Value.text;
         }
 
         if (rightOption != null)
         {
-            buttonRight.GetComponentInChildren<TextMeshProUGUI>().text = rightOption.text;
+            buttonRight.GetComponentInChildren<TextMeshProUGUI>().text = rightOption.Value.text;
         }
     }
     

@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Name: Card node
   m_EditorClassIdentifier: 
   canvas: {fileID: 11400000}
-  position: {x: -487.12, y: 1090.92}
+  position: {x: -528.49, y: 1258.37}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
   CharacterName: CharacterId
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: Card node
   m_EditorClassIdentifier: 
   canvas: {fileID: 11400000}
-  position: {x: 685.21, y: 358.59}
+  position: {x: 673.39, y: 403.9}
   dynamicConnectionPorts:
   - {fileID: 6945936925714412454}
   - {fileID: -2218815809059135353}
@@ -1316,9 +1316,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 11400000}
   parentEditor: {fileID: 0}
-  selectedNode: {fileID: -2788057388423722444}
-  panOffset: {x: -2351.2002, y: -935.20984}
-  zoom: 2.1
+  selectedNode: {fileID: -7163404202504963314}
+  panOffset: {x: -463.79022, y: -1003.89984}
+  zoom: 1.97
 --- !u!114 &276115868488066040
 MonoBehaviour:
   m_ObjectHideFlags: 1

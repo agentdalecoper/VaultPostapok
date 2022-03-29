@@ -283,7 +283,7 @@ public class DialogAction : SerializableCallback<string, int, bool>
 }
 
 [Serializable]
-public class DialogOption
+public struct DialogOption
 {
 	public string text;
 	public Condition[] conditions;

@@ -1,123 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8458511479399703100
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: To Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: 184519280441688353}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 4
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &-8427128888419737445
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: From Next
-  m_EditorClassIdentifier: 
-  body: {fileID: 7031502218449907981}
-  direction: 1
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 2
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &-8411963602340535588
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: To Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: 5635350387146823994}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 4
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &-7792935217940934543
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
-  m_Name: Card node
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  position: {x: -487.12, y: 1090.92}
-  dynamicConnectionPorts: []
-  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
-  CharacterName: CharacterId
-  CharacterPotrait: {fileID: 21300000, guid: 3d5a5aff973134b83a412f6200ddf2cc, type: 3}
-  DialogLine: 
-  ItemsToAdd: 
-  SoundDialog: {fileID: 0}
-  frinPreviousIN: {fileID: 4846656415105828362}
-  toPreviousOUT: {fileID: 8534313448840699576}
-  fromNextIN: {fileID: 7602629504948254451}
-  _options: []
-  actionsOnEnter: []
-  cardObject:
-    points:
-      IsSet: 0
-      Value:
-        money: 0
-        food: 0
-        hull: 0
-    skillsComponent:
-      IsSet: 0
-      Value:
-        fighting: 0
-        science: 0
-        mechanical: 0
-        survival: 0
-        charisma: 0
-    skillsCheck:
-      IsSet: 1
-      Value:
-        skillsToCheck:
-          fighting: 1
-          science: 0
-          mechanical: 0
-          survival: 0
-          charisma: 0
-    tradeTest:
-      IsSet: 0
-      Value:
-        skillsComponents: []
-        skillComponentsCosts: 
-        pointsComponents: []
-        pointsComponentsCosts: 
---- !u!114 &-7555367949268883284
+--- !u!114 &-8673731633951709045
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,668 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
   m_Name: Next Node
   m_EditorClassIdentifier: 
-  body: {fileID: 7797123729896750499}
+  body: {fileID: 3393854507872559208}
   direction: 2
   maxConnectionCount: 1
   styleID: DialogForward
   _connections:
-  - {fileID: -2707702695378724242}
+  - {fileID: 643344691270193544}
   side: 2
   sidePosition: 268.75
   sideOffset: 0
---- !u!114 &-7021954122438943002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: To Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: -2312156106712918470}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 4
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &-6904424726136977219
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Next Node
-  m_EditorClassIdentifier: 
-  body: {fileID: 7031502218449907981}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogForward
-  _connections:
-  - {fileID: 3112069549294333884}
-  side: 2
-  sidePosition: 268.75
-  sideOffset: 0
---- !u!114 &-6881697124432147314
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Next Node
-  m_EditorClassIdentifier: 
-  body: {fileID: 7031502218449907981}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogForward
-  _connections:
-  - {fileID: 3112069549294333884}
-  side: 2
-  sidePosition: 331.75
-  sideOffset: 0
---- !u!114 &-6195964895861166721
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Next Node
-  m_EditorClassIdentifier: 
-  body: {fileID: -2312156106712918470}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogForward
-  _connections:
-  - {fileID: 495133142253360172}
-  side: 2
-  sidePosition: 268.75
-  sideOffset: 0
---- !u!114 &-5921798716977210403
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Next Node
-  m_EditorClassIdentifier: 
-  body: {fileID: 7797123729896750499}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogForward
-  _connections:
-  - {fileID: -2707702695378724242}
-  side: 2
-  sidePosition: 331.75
-  sideOffset: 0
---- !u!114 &-5018861407780270399
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Next Node
-  m_EditorClassIdentifier: 
-  body: {fileID: 5635350387146823994}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogForward
-  _connections:
-  - {fileID: 5449749847981181203}
-  side: 2
-  sidePosition: 331.75
-  sideOffset: 0
---- !u!114 &-4170399367663397855
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: To Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: 7242608160762932142}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 4
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &-3875479782842760003
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: From Next
-  m_EditorClassIdentifier: 
-  body: {fileID: -2854227744193157023}
-  direction: 1
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 2
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &-3571017098786049561
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Next Node
-  m_EditorClassIdentifier: 
-  body: {fileID: -3119809563484201397}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogForward
-  _connections:
-  - {fileID: 4132545823856056269}
-  side: 2
-  sidePosition: 331.75
-  sideOffset: 0
---- !u!114 &-3530065278291054797
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: From Next
-  m_EditorClassIdentifier: 
-  body: {fileID: 7242608160762932142}
-  direction: 1
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 2
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &-3511054032053244969
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Next Node
-  m_EditorClassIdentifier: 
-  body: {fileID: -2312156106712918470}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogForward
-  _connections: []
-  side: 2
-  sidePosition: 331.75
-  sideOffset: 0
---- !u!114 &-3119809563484201397
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
-  m_Name: Card node
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  position: {x: -497.65, y: 425.36005}
-  dynamicConnectionPorts:
-  - {fileID: 5108690737395815359}
-  - {fileID: -3571017098786049561}
-  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
-  CharacterName: CharacterId111
-  CharacterPotrait: {fileID: 21300000, guid: 39323377fa32f4db8a8c607b3f5f06b4, type: 3}
-  DialogLine: "\u041F\u0440\u0438\u0432\u0435\u0442. \u041D\u0443  \u043A\u0430\u043A
-    \u043E\u043D\u043E?"
-  ItemsToAdd: 
-  SoundDialog: {fileID: 0}
-  frinPreviousIN: {fileID: 8341342319551478106}
-  toPreviousOUT: {fileID: 8878066315404809864}
-  fromNextIN: {fileID: 3626459969624049330}
-  _options:
-  - text: "\u0422\u044B \u043A\u0442\u043E?"
-    conditions: []
-  - text: "\u0412\u0441\u0435 \u0445\u043E\u0440\u043E\u0448\u043E."
-    conditions: []
-  actionsOnEnter: []
-  cardObject:
-    points:
-      IsSet: 0
-      Value:
-        money: 0
-        food: 0
-        hull: 0
-    skillsComponent:
-      IsSet: 0
-      Value:
-        fighting: 0
-        science: 0
-        mechanical: 0
-        survival: 0
-        charisma: 0
-    skillsCheck:
-      IsSet: 0
-      Value:
-        skillsToCheck:
-          fighting: 0
-          science: 0
-          mechanical: 0
-          survival: 0
-          charisma: 0
-    tradeTest:
-      IsSet: 0
-      Value:
-        skillsComponents: []
-        skillComponentsCosts: 
-        pointsComponents: []
-        pointsComponentsCosts: 
---- !u!114 &-3034444601715746979
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: To Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: 7797123729896750499}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 4
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &-2854227744193157023
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
-  m_Name: Card node
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  position: {x: 2229.4602, y: 365.9298}
-  dynamicConnectionPorts:
-  - {fileID: 1781370158761201082}
-  - {fileID: -726555008324330381}
-  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
-  CharacterName: CharacterId
-  CharacterPotrait: {fileID: 21300000, guid: 39323377fa32f4db8a8c607b3f5f06b4, type: 3}
-  DialogLine: "\u0412\u043E\u0442 \u0438 \u043F\u0435\u0440\u0432\u044B\u0435 \u043F\u043E\u0441\u0442\u043E\u044F\u043B\u044C\u0446\u044B.\n\u041F\u043E\u0440\u0430
-    \u0437\u0430 \u0440\u0430\u0431\u043E\u0442\u0443. \n\n\u0421 \u043E\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u043C
-    \u0440\u0430\u0437\u0431\u0435\u0440\u0435\u043C\u0441\u044F\n\u043F\u043E \u0445\u043E\u0434\u0443
-    \u0434\u0435\u043B\u0430."
-  ItemsToAdd: 
-  SoundDialog: {fileID: 0}
-  frinPreviousIN: {fileID: -2707702695378724242}
-  toPreviousOUT: {fileID: -1612033443178444737}
-  fromNextIN: {fileID: -3875479782842760003}
-  _options:
-  - text: "\u041D\u0443 \u0434\u0430\u0432\u0430\u0439 \u0440\u0430\u0437\u0431\u0435\u0440\u0435\u043C\u0441\u044F."
-    conditions: []
-  - text: "\u041A\u0430\u043A\u0438\u0435 \u0435\u0449\u0435 \u043F\u043E\u0441\u0442\u043E\u044F\u043B\u044C\u0446\u044B."
-    conditions: []
-  actionsOnEnter: []
-  cardObject:
-    points:
-      IsSet: 0
-      Value:
-        money: 0
-        food: 0
-        hull: 0
-    skillsComponent:
-      IsSet: 0
-      Value:
-        fighting: 0
-        science: 0
-        mechanical: 0
-        survival: 0
-        charisma: 0
-    skillsCheck:
-      IsSet: 0
-      Value:
-        skillsToCheck:
-          fighting: 0
-          science: 0
-          mechanical: 0
-          survival: 0
-          charisma: 0
-    tradeTest:
-      IsSet: 0
-      Value:
-        skillsComponents: []
-        skillComponentsCosts: 
-        pointsComponents: []
-        pointsComponentsCosts: 
---- !u!114 &-2707702695378724242
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: From Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: -2854227744193157023}
-  direction: 1
-  maxConnectionCount: 2
-  styleID: DialogForward
-  _connections:
-  - {fileID: -7555367949268883284}
-  - {fileID: -5921798716977210403}
-  side: 4
-  sidePosition: 30
-  sideOffset: 0
---- !u!114 &-2312156106712918470
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
-  m_Name: Card node
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  position: {x: 64.20999, y: 479.49}
-  dynamicConnectionPorts:
-  - {fileID: -6195964895861166721}
-  - {fileID: -3511054032053244969}
-  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
-  CharacterName: CharacterId3
-  CharacterPotrait: {fileID: 21300000, guid: 39323377fa32f4db8a8c607b3f5f06b4, type: 3}
-  DialogLine: "\u042F \u0442\u0432\u043E\u0439 \u0434\u0440\u0443\u0433. \u041C\u043E\u044F
-    \u0446\u0435\u043B\u044C: \u043F\u043E\u043C\u043E\u0447\u044C\n\u043D\u0430
-    \u0442\u0432\u043E\u0435\u0439 \u043D\u0435\u043F\u0440\u043E\u0441\u0442\u043E\u0439
-    \u0441\u043B\u0443\u0436\u0431\u0435."
-  ItemsToAdd: 
-  SoundDialog: {fileID: 0}
-  frinPreviousIN: {fileID: 4132545823856056269}
-  toPreviousOUT: {fileID: -7021954122438943002}
-  fromNextIN: {fileID: 7974039199113318774}
-  _options:
-  - text: "\u0410 \u0447\u0442\u043E \u043D\u0430\u0434\u043E \u0434\u0435\u043B\u0430\u0442\u044C?"
-    conditions: []
-  - text: "\u042F \u0441\u0430\u043C \u0440\u0430\u0437\u0431\u0435\u0440\u0443\u0441\u044C,
-      \u0443\u0445\u043E\u0434\u0438."
-    conditions: []
-  actionsOnEnter: []
-  cardObject:
-    points:
-      IsSet: 0
-      Value:
-        money: 0
-        food: 0
-        hull: 0
-    skillsComponent:
-      IsSet: 1
-      Value:
-        fighting: 1
-        science: 0
-        mechanical: 0
-        survival: 0
-        charisma: 0
-    skillsCheck:
-      IsSet: 0
-      Value:
-        skillsToCheck:
-          fighting: 0
-          science: 0
-          mechanical: 0
-          survival: 0
-          charisma: 0
-    tradeTest:
-      IsSet: 0
-      Value:
-        skillsComponents: []
-        skillComponentsCosts: 
-        pointsComponents: []
-        pointsComponentsCosts: 
---- !u!114 &-2022569712072087149
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: To Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: 7031502218449907981}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 4
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &-1626623635266765629
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: From Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: 184519280441688353}
-  direction: 1
-  maxConnectionCount: 2
-  styleID: DialogForward
-  _connections: []
-  side: 4
-  sidePosition: 30
-  sideOffset: 0
---- !u!114 &-1612033443178444737
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: To Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: -2854227744193157023}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 4
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &-1428107515121188731
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: From Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: 7242608160762932142}
-  direction: 1
-  maxConnectionCount: 2
-  styleID: DialogForward
-  _connections: []
-  side: 4
-  sidePosition: 30
-  sideOffset: 0
---- !u!114 &-726555008324330381
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Next Node
-  m_EditorClassIdentifier: 
-  body: {fileID: -2854227744193157023}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogForward
-  _connections: []
-  side: 2
-  sidePosition: 331.75
-  sideOffset: 0
---- !u!114 &-454037568725253615
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: From Next
-  m_EditorClassIdentifier: 
-  body: {fileID: 1301644931053410427}
-  direction: 1
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 2
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &-407116951674710426
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6ab6487237ff124ea4c2aa5de9ce3fb, type: 3}
-  m_Name: MainEditorState
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  parentEditor: {fileID: 0}
-  selectedNode: {fileID: -2854227744193157023}
-  panOffset: {x: -2351.2002, y: -935.20984}
-  zoom: 2.1
---- !u!114 &-239431521918377319
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: From Next
-  m_EditorClassIdentifier: 
-  body: {fileID: 7797123729896750499}
-  direction: 1
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 2
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6c0086c3892b96438fecf5113b2de2d, type: 3}
-  m_Name: CurSession
-  m_EditorClassIdentifier: 
-  editorStates:
-  - {fileID: -407116951674710426}
-  saveName: CardsCanvas
-  savePath: Assets/CardsCanvas.asset
-  livesInScene: 0
-  nodes:
-  - {fileID: 1301644931053410427}
-  - {fileID: -2312156106712918470}
-  - {fileID: -3119809563484201397}
-  - {fileID: 5635350387146823994}
-  - {fileID: 184519280441688353}
-  - {fileID: -7792935217940934543}
-  - {fileID: 7242608160762932142}
-  - {fileID: 7031502218449907981}
-  - {fileID: 7797123729896750499}
-  - {fileID: -2854227744193157023}
-  groups: []
-  Name: Dialog
---- !u!114 &184519280441688353
+--- !u!114 &-8053742850195019678
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -811,9 +42,9 @@ MonoBehaviour:
   DialogLine: lelele
   ItemsToAdd: 
   SoundDialog: {fileID: 0}
-  frinPreviousIN: {fileID: -1626623635266765629}
-  toPreviousOUT: {fileID: -8458511479399703100}
-  fromNextIN: {fileID: 6590568696739640525}
+  frinPreviousIN: {fileID: 2486684020994873324}
+  toPreviousOUT: {fileID: 5193259392077472362}
+  fromNextIN: {fileID: -75724692361329434}
   _options: []
   actionsOnEnter: []
   cardObject:
@@ -868,7 +99,47 @@ MonoBehaviour:
           food: 0
           hull: 1
         pointsComponentsCosts: 0100000001000000
---- !u!114 &495133142253360172
+--- !u!114 &-7998097892187264385
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Next Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 7906620863731703515}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogForward
+  _connections: []
+  side: 2
+  sidePosition: 268.75
+  sideOffset: 0
+--- !u!114 &-7758611720972883022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: To Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: 3393854507872559208}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 4
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &-6977482636349801099
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -880,16 +151,384 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
   m_Name: From Previous
   m_EditorClassIdentifier: 
-  body: {fileID: 5635350387146823994}
+  body: {fileID: 5940138596679550980}
+  direction: 1
+  maxConnectionCount: 2
+  styleID: DialogForward
+  _connections: []
+  side: 4
+  sidePosition: 30
+  sideOffset: 0
+--- !u!114 &-5355391619165581500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Next Node
+  m_EditorClassIdentifier: 
+  body: {fileID: -395459444591126180}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogForward
+  _connections:
+  - {fileID: 8247287444639178683}
+  side: 2
+  sidePosition: 268.75
+  sideOffset: 0
+--- !u!114 &-5301767199021428789
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Next Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 8561790055969780198}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogForward
+  _connections: []
+  side: 2
+  sidePosition: 331.75
+  sideOffset: 0
+--- !u!114 &-4858969373702211744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: From Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: 8561790055969780198}
   direction: 1
   maxConnectionCount: 2
   styleID: DialogForward
   _connections:
-  - {fileID: -6195964895861166721}
+  - {fileID: 502900682541447262}
+  - {fileID: -2371318686498238436}
   side: 4
   sidePosition: 30
   sideOffset: 0
---- !u!114 &1301644931053410427
+--- !u!114 &-4744583601407314601
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: From Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: 7906620863731703515}
+  direction: 1
+  maxConnectionCount: 2
+  styleID: DialogForward
+  _connections:
+  - {fileID: -4466626468302999997}
+  - {fileID: 2027580217895905539}
+  side: 4
+  sidePosition: 30
+  sideOffset: 0
+--- !u!114 &-4466626468302999997
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Next Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 3412982724965852060}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogForward
+  _connections:
+  - {fileID: -4744583601407314601}
+  side: 2
+  sidePosition: 268.75
+  sideOffset: 0
+--- !u!114 &-4425321003735904204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Next
+  m_EditorClassIdentifier: 
+  body: {fileID: 3412982724965852060}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 2
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &-4277732897703752164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: To Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: 6414409227083834801}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 4
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &-3978534284576171064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Next Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 8561790055969780198}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogForward
+  _connections:
+  - {fileID: 4503245991992805718}
+  side: 2
+  sidePosition: 268.75
+  sideOffset: 0
+--- !u!114 &-3203020592100289072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: From Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: 4464947514387730050}
+  direction: 1
+  maxConnectionCount: 2
+  styleID: DialogForward
+  _connections: []
+  side: 4
+  sidePosition: 30
+  sideOffset: 0
+--- !u!114 &-3083270990441052428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Next
+  m_EditorClassIdentifier: 
+  body: {fileID: 5940138596679550980}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 2
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &-3039035875539494268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Next Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 3393854507872559208}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogForward
+  _connections:
+  - {fileID: 643344691270193544}
+  side: 2
+  sidePosition: 331.75
+  sideOffset: 0
+--- !u!114 &-2751995828729677579
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Next
+  m_EditorClassIdentifier: 
+  body: {fileID: -395459444591126180}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 2
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &-2719824951403399570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Next
+  m_EditorClassIdentifier: 
+  body: {fileID: 7906620863731703515}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 2
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &-2534310451744771412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Next Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 7906620863731703515}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogForward
+  _connections: []
+  side: 2
+  sidePosition: 331.75
+  sideOffset: 0
+--- !u!114 &-2371318686498238436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Next Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 4464947514387730050}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogForward
+  _connections:
+  - {fileID: -4858969373702211744}
+  side: 2
+  sidePosition: 268.75
+  sideOffset: 0
+--- !u!114 &-1536267193803550839
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: To Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: 4464947514387730050}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 4
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &-1527532498747351931
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: To Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: 8561790055969780198}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 4
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &-1127238572067787919
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Next
+  m_EditorClassIdentifier: 
+  body: {fileID: 4464947514387730050}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 2
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &-395459444591126180
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -902,275 +541,10 @@ MonoBehaviour:
   m_Name: Card node
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  position: {x: -50.950012, y: 1697.25}
-  dynamicConnectionPorts: []
-  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
-  CharacterName: CharacterId2
-  CharacterPotrait: {fileID: 21300000, guid: 76f9d473a6f264a6596555535088163d, type: 3}
-  DialogLine: hehehehe
-  ItemsToAdd: 
-  SoundDialog: {fileID: 0}
-  frinPreviousIN: {fileID: 4404743563382426407}
-  toPreviousOUT: {fileID: 7624792745919388241}
-  fromNextIN: {fileID: -454037568725253615}
-  _options: []
-  actionsOnEnter: []
-  cardObject:
-    points:
-      IsSet: 0
-      Value:
-        money: 0
-        food: 0
-        hull: 0
-    skillsComponent:
-      IsSet: 0
-      Value:
-        fighting: 0
-        science: 0
-        mechanical: 0
-        survival: 0
-        charisma: 0
-    skillsCheck:
-      IsSet: 1
-      Value:
-        skillsToCheck:
-          fighting: 1
-          science: 0
-          mechanical: 0
-          survival: 0
-          charisma: 0
-    tradeTest:
-      IsSet: 0
-      Value:
-        skillsComponents: []
-        skillComponentsCosts: 
-        pointsComponents: []
-        pointsComponentsCosts: 
---- !u!114 &1781370158761201082
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Next Node
-  m_EditorClassIdentifier: 
-  body: {fileID: -2854227744193157023}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogForward
-  _connections: []
-  side: 2
-  sidePosition: 268.75
-  sideOffset: 0
---- !u!114 &3112069549294333884
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: From Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: 7797123729896750499}
-  direction: 1
-  maxConnectionCount: 2
-  styleID: DialogForward
-  _connections:
-  - {fileID: -6904424726136977219}
-  - {fileID: -6881697124432147314}
-  side: 4
-  sidePosition: 30
-  sideOffset: 0
---- !u!114 &3626459969624049330
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: From Next
-  m_EditorClassIdentifier: 
-  body: {fileID: -3119809563484201397}
-  direction: 1
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 2
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &3847954278113186248
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Next Node
-  m_EditorClassIdentifier: 
-  body: {fileID: 5635350387146823994}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogForward
-  _connections:
-  - {fileID: 5449749847981181203}
-  side: 2
-  sidePosition: 268.75
-  sideOffset: 0
---- !u!114 &4132545823856056269
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: From Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: -2312156106712918470}
-  direction: 1
-  maxConnectionCount: 2
-  styleID: DialogForward
-  _connections:
-  - {fileID: -3571017098786049561}
-  - {fileID: 5108690737395815359}
-  side: 4
-  sidePosition: 30
-  sideOffset: 0
---- !u!114 &4404743563382426407
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: From Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: 1301644931053410427}
-  direction: 1
-  maxConnectionCount: 2
-  styleID: DialogForward
-  _connections: []
-  side: 4
-  sidePosition: 30
-  sideOffset: 0
---- !u!114 &4782020647402678948
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: From Next
-  m_EditorClassIdentifier: 
-  body: {fileID: 5635350387146823994}
-  direction: 1
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 2
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &4846656415105828362
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: From Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: -7792935217940934543}
-  direction: 1
-  maxConnectionCount: 2
-  styleID: DialogForward
-  _connections: []
-  side: 4
-  sidePosition: 30
-  sideOffset: 0
---- !u!114 &5108690737395815359
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: Next Node
-  m_EditorClassIdentifier: 
-  body: {fileID: -3119809563484201397}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogForward
-  _connections:
-  - {fileID: 4132545823856056269}
-  side: 2
-  sidePosition: 268.75
-  sideOffset: 0
---- !u!114 &5449749847981181203
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
-  m_Name: From Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: 7031502218449907981}
-  direction: 1
-  maxConnectionCount: 2
-  styleID: DialogForward
-  _connections:
-  - {fileID: 3847954278113186248}
-  - {fileID: -5018861407780270399}
-  side: 4
-  sidePosition: 30
-  sideOffset: 0
---- !u!114 &5635350387146823994
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
-  m_Name: Card node
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  position: {x: 685.21, y: 358.59}
+  position: {x: 673.39, y: 403.9}
   dynamicConnectionPorts:
-  - {fileID: 3847954278113186248}
-  - {fileID: -5018861407780270399}
+  - {fileID: -5355391619165581500}
+  - {fileID: 8503370854591525969}
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
   CharacterName: CharacterId
   CharacterPotrait: {fileID: 21300000, guid: 39323377fa32f4db8a8c607b3f5f06b4, type: 3}
@@ -1179,9 +553,9 @@ MonoBehaviour:
     \u043E\u0436\u0438\u0432\u0435\u0442."
   ItemsToAdd: 
   SoundDialog: {fileID: 0}
-  frinPreviousIN: {fileID: 495133142253360172}
-  toPreviousOUT: {fileID: -8411963602340535588}
-  fromNextIN: {fileID: 4782020647402678948}
+  frinPreviousIN: {fileID: 4503245991992805718}
+  toPreviousOUT: {fileID: 9062952696914771476}
+  fromNextIN: {fileID: -2751995828729677579}
   _options:
   - text: "\u0414\u0430\u0432\u0430\u0439 \u0434\u0430\u043B\u044C\u0448\u0435."
     conditions: []
@@ -1219,7 +593,7 @@ MonoBehaviour:
         skillComponentsCosts: 
         pointsComponents: []
         pointsComponentsCosts: 
---- !u!114 &6590568696739640525
+--- !u!114 &-239256020574077111
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1231,7 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
   m_Name: From Next
   m_EditorClassIdentifier: 
-  body: {fileID: 184519280441688353}
+  body: {fileID: 6414409227083834801}
   direction: 1
   maxConnectionCount: 1
   styleID: DialogBack
@@ -1239,7 +613,298 @@ MonoBehaviour:
   side: 2
   sidePosition: 50
   sideOffset: 0
---- !u!114 &7031502218449907981
+--- !u!114 &-75724692361329434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Next
+  m_EditorClassIdentifier: 
+  body: {fileID: -8053742850195019678}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 2
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c0086c3892b96438fecf5113b2de2d, type: 3}
+  m_Name: CurSession
+  m_EditorClassIdentifier: 
+  editorStates:
+  - {fileID: 3427322826623883272}
+  saveName: CardsCanvas
+  savePath: Assets/CardsCanvas.asset
+  livesInScene: 0
+  nodes:
+  - {fileID: 1054282956829240849}
+  - {fileID: 8561790055969780198}
+  - {fileID: 4464947514387730050}
+  - {fileID: -395459444591126180}
+  - {fileID: -8053742850195019678}
+  - {fileID: 6414409227083834801}
+  - {fileID: 5940138596679550980}
+  - {fileID: 3393854507872559208}
+  - {fileID: 3412982724965852060}
+  - {fileID: 7906620863731703515}
+  groups: []
+  Name: Dialog
+--- !u!114 &154330455631377755
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: To Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: 1054282956829240849}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 4
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &201012367640703691
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: To Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: 7906620863731703515}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 4
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &502900682541447262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Next Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 4464947514387730050}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogForward
+  _connections:
+  - {fileID: -4858969373702211744}
+  side: 2
+  sidePosition: 331.75
+  sideOffset: 0
+--- !u!114 &643344691270193544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: From Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: 3412982724965852060}
+  direction: 1
+  maxConnectionCount: 2
+  styleID: DialogForward
+  _connections:
+  - {fileID: -8673731633951709045}
+  - {fileID: -3039035875539494268}
+  side: 4
+  sidePosition: 30
+  sideOffset: 0
+--- !u!114 &848513334848358863
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Next
+  m_EditorClassIdentifier: 
+  body: {fileID: 3393854507872559208}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 2
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &870978272766400770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: To Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: 5940138596679550980}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 4
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &1054282956829240849
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
+  m_Name: Card node
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  position: {x: -50.950012, y: 1697.25}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  CharacterName: CharacterId2
+  CharacterPotrait: {fileID: 21300000, guid: 76f9d473a6f264a6596555535088163d, type: 3}
+  DialogLine: hehehehe
+  ItemsToAdd: 
+  SoundDialog: {fileID: 0}
+  frinPreviousIN: {fileID: 7718399027042243996}
+  toPreviousOUT: {fileID: 154330455631377755}
+  fromNextIN: {fileID: 2399860171096896725}
+  _options: []
+  actionsOnEnter: []
+  cardObject:
+    points:
+      IsSet: 0
+      Value:
+        money: 0
+        food: 0
+        hull: 0
+    skillsComponent:
+      IsSet: 0
+      Value:
+        fighting: 0
+        science: 0
+        mechanical: 0
+        survival: 0
+        charisma: 0
+    skillsCheck:
+      IsSet: 1
+      Value:
+        skillsToCheck:
+          fighting: 1
+          science: 0
+          mechanical: 0
+          survival: 0
+          charisma: 0
+    tradeTest:
+      IsSet: 0
+      Value:
+        skillsComponents: []
+        skillComponentsCosts: 
+        pointsComponents: []
+        pointsComponentsCosts: 
+--- !u!114 &2027580217895905539
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Next Node
+  m_EditorClassIdentifier: 
+  body: {fileID: 3412982724965852060}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogForward
+  _connections:
+  - {fileID: -4744583601407314601}
+  side: 2
+  sidePosition: 331.75
+  sideOffset: 0
+--- !u!114 &2399860171096896725
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Next
+  m_EditorClassIdentifier: 
+  body: {fileID: 1054282956829240849}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 2
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &2486684020994873324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: From Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: -8053742850195019678}
+  direction: 1
+  maxConnectionCount: 2
+  styleID: DialogForward
+  _connections: []
+  side: 4
+  sidePosition: 30
+  sideOffset: 0
+--- !u!114 &3393854507872559208
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1254,8 +919,8 @@ MonoBehaviour:
   canvas: {fileID: 0}
   position: {x: 1261.2201, y: 355.9198}
   dynamicConnectionPorts:
-  - {fileID: -6904424726136977219}
-  - {fileID: -6881697124432147314}
+  - {fileID: -8673731633951709045}
+  - {fileID: -3039035875539494268}
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
   CharacterName: CharacterId
   CharacterPotrait: {fileID: 21300000, guid: 39323377fa32f4db8a8c607b3f5f06b4, type: 3}
@@ -1268,9 +933,9 @@ MonoBehaviour:
     \u043D\u0430\u0441\u0442\u0440\u043E\u0435\u043D\u0438\u044F."
   ItemsToAdd: 
   SoundDialog: {fileID: 0}
-  frinPreviousIN: {fileID: 5449749847981181203}
-  toPreviousOUT: {fileID: -2022569712072087149}
-  fromNextIN: {fileID: -8427128888419737445}
+  frinPreviousIN: {fileID: 8247287444639178683}
+  toPreviousOUT: {fileID: -7758611720972883022}
+  fromNextIN: {fileID: 848513334848358863}
   _options:
   - text: "\u0414\u0430\u0432\u0430\u0439 \u0434\u0430\u043B\u044C\u0448\u0435."
     conditions: []
@@ -1308,104 +973,7 @@ MonoBehaviour:
         skillComponentsCosts: 
         pointsComponents: []
         pointsComponentsCosts: 
---- !u!114 &7242608160762932142
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
-  m_Name: Card node
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  position: {x: -542.40985, y: 1868.0999}
-  dynamicConnectionPorts: []
-  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
-  CharacterName: CharacterId
-  CharacterPotrait: {fileID: 0}
-  DialogLine: Rawr
-  ItemsToAdd: 
-  SoundDialog: {fileID: 0}
-  frinPreviousIN: {fileID: -1428107515121188731}
-  toPreviousOUT: {fileID: -4170399367663397855}
-  fromNextIN: {fileID: -3530065278291054797}
-  _options: []
-  actionsOnEnter: []
-  cardObject:
-    points:
-      IsSet: 0
-      Value:
-        money: 0
-        food: 0
-        hull: 0
-    skillsComponent:
-      IsSet: 0
-      Value:
-        fighting: 0
-        science: 0
-        mechanical: 0
-        survival: 0
-        charisma: 0
-    skillsCheck:
-      IsSet: 0
-      Value:
-        skillsToCheck:
-          fighting: 0
-          science: 0
-          mechanical: 0
-          survival: 0
-          charisma: 0
-    tradeTest:
-      IsSet: 0
-      Value:
-        skillsComponents: []
-        skillComponentsCosts: 
-        pointsComponents: []
-        pointsComponentsCosts: 
---- !u!114 &7602629504948254451
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: From Next
-  m_EditorClassIdentifier: 
-  body: {fileID: -7792935217940934543}
-  direction: 1
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 2
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &7624792745919388241
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: To Previous
-  m_EditorClassIdentifier: 
-  body: {fileID: 1301644931053410427}
-  direction: 2
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 4
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &7797123729896750499
+--- !u!114 &3412982724965852060
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1420,8 +988,8 @@ MonoBehaviour:
   canvas: {fileID: 0}
   position: {x: 1731.6901, y: 360.4698}
   dynamicConnectionPorts:
-  - {fileID: -7555367949268883284}
-  - {fileID: -5921798716977210403}
+  - {fileID: -4466626468302999997}
+  - {fileID: 2027580217895905539}
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
   CharacterName: CharacterId
   CharacterPotrait: {fileID: 21300000, guid: 39323377fa32f4db8a8c607b3f5f06b4, type: 3}
@@ -1431,9 +999,9 @@ MonoBehaviour:
     \u0440\u0443\u0445\u043D\u0435\u0442."
   ItemsToAdd: 
   SoundDialog: {fileID: 0}
-  frinPreviousIN: {fileID: 3112069549294333884}
-  toPreviousOUT: {fileID: -3034444601715746979}
-  fromNextIN: {fileID: -239431521918377319}
+  frinPreviousIN: {fileID: 643344691270193544}
+  toPreviousOUT: {fileID: 8938124781460350820}
+  fromNextIN: {fileID: -4425321003735904204}
   _options:
   - text: "\u041F\u043E\u043D\u044F\u043B."
     conditions: []
@@ -1471,7 +1039,7 @@ MonoBehaviour:
         skillComponentsCosts: 
         pointsComponents: []
         pointsComponentsCosts: 
---- !u!114 &7974039199113318774
+--- !u!114 &3427322826623883272
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1480,18 +1048,79 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
-  m_Name: From Next
+  m_Script: {fileID: 11500000, guid: f6ab6487237ff124ea4c2aa5de9ce3fb, type: 3}
+  m_Name: MainEditorState
   m_EditorClassIdentifier: 
-  body: {fileID: -2312156106712918470}
-  direction: 1
-  maxConnectionCount: 1
-  styleID: DialogBack
-  _connections: []
-  side: 2
-  sidePosition: 50
-  sideOffset: 0
---- !u!114 &8341342319551478106
+  canvas: {fileID: 0}
+  parentEditor: {fileID: 0}
+  selectedNode: {fileID: -395459444591126180}
+  panOffset: {x: -463.79022, y: -1003.89984}
+  zoom: 1.97
+--- !u!114 &4464947514387730050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
+  m_Name: Card node
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  position: {x: -497.65, y: 425.36005}
+  dynamicConnectionPorts:
+  - {fileID: -2371318686498238436}
+  - {fileID: 502900682541447262}
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  CharacterName: CharacterId111
+  CharacterPotrait: {fileID: 21300000, guid: 39323377fa32f4db8a8c607b3f5f06b4, type: 3}
+  DialogLine: "\u041F\u0440\u0438\u0432\u0435\u0442. \u041D\u0443  \u043A\u0430\u043A
+    \u043E\u043D\u043E?"
+  ItemsToAdd: 
+  SoundDialog: {fileID: 0}
+  frinPreviousIN: {fileID: -3203020592100289072}
+  toPreviousOUT: {fileID: -1536267193803550839}
+  fromNextIN: {fileID: -1127238572067787919}
+  _options:
+  - text: "\u0422\u044B \u043A\u0442\u043E?"
+    conditions: []
+  - text: "\u0412\u0441\u0435 \u0445\u043E\u0440\u043E\u0448\u043E."
+    conditions: []
+  actionsOnEnter: []
+  cardObject:
+    points:
+      IsSet: 0
+      Value:
+        money: 0
+        food: 0
+        hull: 0
+    skillsComponent:
+      IsSet: 0
+      Value:
+        fighting: 0
+        science: 0
+        mechanical: 0
+        survival: 0
+        charisma: 0
+    skillsCheck:
+      IsSet: 0
+      Value:
+        skillsToCheck:
+          fighting: 0
+          science: 0
+          mechanical: 0
+          survival: 0
+          charisma: 0
+    tradeTest:
+      IsSet: 0
+      Value:
+        skillsComponents: []
+        skillComponentsCosts: 
+        pointsComponents: []
+        pointsComponentsCosts: 
+--- !u!114 &4503245991992805718
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1503,15 +1132,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
   m_Name: From Previous
   m_EditorClassIdentifier: 
-  body: {fileID: -3119809563484201397}
+  body: {fileID: -395459444591126180}
   direction: 1
   maxConnectionCount: 2
   styleID: DialogForward
-  _connections: []
+  _connections:
+  - {fileID: -3978534284576171064}
   side: 4
   sidePosition: 30
   sideOffset: 0
---- !u!114 &8534313448840699576
+--- !u!114 &5193259392077472362
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1523,7 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
   m_Name: To Previous
   m_EditorClassIdentifier: 
-  body: {fileID: -7792935217940934543}
+  body: {fileID: -8053742850195019678}
   direction: 2
   maxConnectionCount: 1
   styleID: DialogBack
@@ -1531,7 +1161,357 @@ MonoBehaviour:
   side: 4
   sidePosition: 50
   sideOffset: 0
---- !u!114 &8878066315404809864
+--- !u!114 &5940138596679550980
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
+  m_Name: Card node
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  position: {x: -542.40985, y: 1868.0999}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  CharacterName: CharacterId
+  CharacterPotrait: {fileID: 0}
+  DialogLine: Rawr
+  ItemsToAdd: 
+  SoundDialog: {fileID: 0}
+  frinPreviousIN: {fileID: -6977482636349801099}
+  toPreviousOUT: {fileID: 870978272766400770}
+  fromNextIN: {fileID: -3083270990441052428}
+  _options: []
+  actionsOnEnter: []
+  cardObject:
+    points:
+      IsSet: 0
+      Value:
+        money: 0
+        food: 0
+        hull: 0
+    skillsComponent:
+      IsSet: 0
+      Value:
+        fighting: 0
+        science: 0
+        mechanical: 0
+        survival: 0
+        charisma: 0
+    skillsCheck:
+      IsSet: 0
+      Value:
+        skillsToCheck:
+          fighting: 0
+          science: 0
+          mechanical: 0
+          survival: 0
+          charisma: 0
+    tradeTest:
+      IsSet: 0
+      Value:
+        skillsComponents: []
+        skillComponentsCosts: 
+        pointsComponents: []
+        pointsComponentsCosts: 
+--- !u!114 &6414409227083834801
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
+  m_Name: Card node
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  position: {x: -528.49, y: 1258.37}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  CharacterName: CharacterId
+  CharacterPotrait: {fileID: 21300000, guid: 3d5a5aff973134b83a412f6200ddf2cc, type: 3}
+  DialogLine: 
+  ItemsToAdd: 
+  SoundDialog: {fileID: 0}
+  frinPreviousIN: {fileID: 8683677153051873706}
+  toPreviousOUT: {fileID: -4277732897703752164}
+  fromNextIN: {fileID: -239256020574077111}
+  _options: []
+  actionsOnEnter: []
+  cardObject:
+    points:
+      IsSet: 0
+      Value:
+        money: 0
+        food: 0
+        hull: 0
+    skillsComponent:
+      IsSet: 0
+      Value:
+        fighting: 0
+        science: 0
+        mechanical: 0
+        survival: 0
+        charisma: 0
+    skillsCheck:
+      IsSet: 1
+      Value:
+        skillsToCheck:
+          fighting: 1
+          science: 0
+          mechanical: 0
+          survival: 0
+          charisma: 0
+    tradeTest:
+      IsSet: 0
+      Value:
+        skillsComponents: []
+        skillComponentsCosts: 
+        pointsComponents: []
+        pointsComponentsCosts: 
+--- !u!114 &7718399027042243996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: From Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: 1054282956829240849}
+  direction: 1
+  maxConnectionCount: 2
+  styleID: DialogForward
+  _connections: []
+  side: 4
+  sidePosition: 30
+  sideOffset: 0
+--- !u!114 &7906620863731703515
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
+  m_Name: Card node
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  position: {x: 2229.4602, y: 365.9298}
+  dynamicConnectionPorts:
+  - {fileID: -7998097892187264385}
+  - {fileID: -2534310451744771412}
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  CharacterName: CharacterId
+  CharacterPotrait: {fileID: 21300000, guid: 39323377fa32f4db8a8c607b3f5f06b4, type: 3}
+  DialogLine: "\u0412\u043E\u0442 \u0438 \u043F\u0435\u0440\u0432\u044B\u0435 \u043F\u043E\u0441\u0442\u043E\u044F\u043B\u044C\u0446\u044B.\n\u041F\u043E\u0440\u0430
+    \u0437\u0430 \u0440\u0430\u0431\u043E\u0442\u0443. \n\n\u0421 \u043E\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u043C
+    \u0440\u0430\u0437\u0431\u0435\u0440\u0435\u043C\u0441\u044F\n\u043F\u043E \u0445\u043E\u0434\u0443
+    \u0434\u0435\u043B\u0430."
+  ItemsToAdd: 
+  SoundDialog: {fileID: 0}
+  frinPreviousIN: {fileID: -4744583601407314601}
+  toPreviousOUT: {fileID: 201012367640703691}
+  fromNextIN: {fileID: -2719824951403399570}
+  _options:
+  - text: "\u041D\u0443 \u0434\u0430\u0432\u0430\u0439 \u0440\u0430\u0437\u0431\u0435\u0440\u0435\u043C\u0441\u044F."
+    conditions: []
+  - text: "\u041A\u0430\u043A\u0438\u0435 \u0435\u0449\u0435 \u043F\u043E\u0441\u0442\u043E\u044F\u043B\u044C\u0446\u044B."
+    conditions: []
+  actionsOnEnter: []
+  cardObject:
+    points:
+      IsSet: 0
+      Value:
+        money: 0
+        food: 0
+        hull: 0
+    skillsComponent:
+      IsSet: 0
+      Value:
+        fighting: 0
+        science: 0
+        mechanical: 0
+        survival: 0
+        charisma: 0
+    skillsCheck:
+      IsSet: 0
+      Value:
+        skillsToCheck:
+          fighting: 0
+          science: 0
+          mechanical: 0
+          survival: 0
+          charisma: 0
+    tradeTest:
+      IsSet: 0
+      Value:
+        skillsComponents: []
+        skillComponentsCosts: 
+        pointsComponents: []
+        pointsComponentsCosts: 
+--- !u!114 &7939624373475319994
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Next
+  m_EditorClassIdentifier: 
+  body: {fileID: 8561790055969780198}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 2
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &8247287444639178683
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: From Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: 3393854507872559208}
+  direction: 1
+  maxConnectionCount: 2
+  styleID: DialogForward
+  _connections:
+  - {fileID: -5355391619165581500}
+  - {fileID: 8503370854591525969}
+  side: 4
+  sidePosition: 30
+  sideOffset: 0
+--- !u!114 &8503370854591525969
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: Next Node
+  m_EditorClassIdentifier: 
+  body: {fileID: -395459444591126180}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogForward
+  _connections:
+  - {fileID: 8247287444639178683}
+  side: 2
+  sidePosition: 331.75
+  sideOffset: 0
+--- !u!114 &8561790055969780198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
+  m_Name: Card node
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  position: {x: 64.20999, y: 479.49}
+  dynamicConnectionPorts:
+  - {fileID: -3978534284576171064}
+  - {fileID: -5301767199021428789}
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  CharacterName: CharacterId3
+  CharacterPotrait: {fileID: 21300000, guid: 39323377fa32f4db8a8c607b3f5f06b4, type: 3}
+  DialogLine: "\u042F \u0442\u0432\u043E\u0439 \u0434\u0440\u0443\u0433. \u041C\u043E\u044F
+    \u0446\u0435\u043B\u044C: \u043F\u043E\u043C\u043E\u0447\u044C\n\u043D\u0430
+    \u0442\u0432\u043E\u0435\u0439 \u043D\u0435\u043F\u0440\u043E\u0441\u0442\u043E\u0439
+    \u0441\u043B\u0443\u0436\u0431\u0435."
+  ItemsToAdd: 
+  SoundDialog: {fileID: 0}
+  frinPreviousIN: {fileID: -4858969373702211744}
+  toPreviousOUT: {fileID: -1527532498747351931}
+  fromNextIN: {fileID: 7939624373475319994}
+  _options:
+  - text: "\u0410 \u0447\u0442\u043E \u043D\u0430\u0434\u043E \u0434\u0435\u043B\u0430\u0442\u044C?"
+    conditions: []
+  - text: "\u042F \u0441\u0430\u043C \u0440\u0430\u0437\u0431\u0435\u0440\u0443\u0441\u044C,
+      \u0443\u0445\u043E\u0434\u0438."
+    conditions: []
+  actionsOnEnter: []
+  cardObject:
+    points:
+      IsSet: 0
+      Value:
+        money: 0
+        food: 0
+        hull: 0
+    skillsComponent:
+      IsSet: 1
+      Value:
+        fighting: 1
+        science: 0
+        mechanical: 0
+        survival: 0
+        charisma: 0
+    skillsCheck:
+      IsSet: 0
+      Value:
+        skillsToCheck:
+          fighting: 0
+          science: 0
+          mechanical: 0
+          survival: 0
+          charisma: 0
+    tradeTest:
+      IsSet: 0
+      Value:
+        skillsComponents: []
+        skillComponentsCosts: 
+        pointsComponents: []
+        pointsComponentsCosts: 
+--- !u!114 &8683677153051873706
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: From Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: 6414409227083834801}
+  direction: 1
+  maxConnectionCount: 2
+  styleID: DialogForward
+  _connections: []
+  side: 4
+  sidePosition: 30
+  sideOffset: 0
+--- !u!114 &8938124781460350820
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1543,7 +1523,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
   m_Name: To Previous
   m_EditorClassIdentifier: 
-  body: {fileID: -3119809563484201397}
+  body: {fileID: 3412982724965852060}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: DialogBack
+  _connections: []
+  side: 4
+  sidePosition: 50
+  sideOffset: 0
+--- !u!114 &9062952696914771476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: To Previous
+  m_EditorClassIdentifier: 
+  body: {fileID: -395459444591126180}
   direction: 2
   maxConnectionCount: 1
   styleID: DialogBack
