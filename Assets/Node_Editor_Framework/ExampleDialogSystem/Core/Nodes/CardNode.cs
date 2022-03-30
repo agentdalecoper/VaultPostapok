@@ -210,6 +210,8 @@ public class CardNode : BaseDialogNode
 				i--;
 			}
 
+			dataHolderForOptions[i] = option;
+
 			GUILayout.Space(4);
 		}
 	}

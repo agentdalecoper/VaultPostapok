@@ -104,8 +104,8 @@ public class CardUI : MonoBehaviour
         buttonRight.gameObject.SetActive(true);
 
         string successOrLoose = success ? "Dice success" : "Dice lose";
-        text.text = $"{successOrLoose} was checking {skillsCheck} vs. " +
-                    $" playerSkills={playerSkills} + diceRoll={diceRoll.roll}";
+        // text.text = $"{successOrLoose} was checking {skillsCheck} vs. " +
+        //             $" playerSkills={playerSkills} + diceRoll={diceRoll.roll}";
 
         await Task.Delay(TimeSpan.FromSeconds(20f));
         isWaitingUiDelay.TrySetResult(false);

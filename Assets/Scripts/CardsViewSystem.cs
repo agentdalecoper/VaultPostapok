@@ -93,8 +93,17 @@ internal class CardsViewSystem : IEcsRunSystem
         
     }
 
+    public static void SetActiveStartGame()
+    {
+        StartGameUI.Instance.gameObject.SetActive(true);
+        CardUI.Instance.gameObject.SetActive(false);
+        TradeUI.Instance.gameObject.SetActive(false);
+        EndOfGameUI.Instance.gameObject.SetActive(false);
+    }
+    
     private static void SetActiveEndOfGame()
     {
+        StartGameUI.Instance.gameObject.SetActive(false);
         CardUI.Instance.gameObject.SetActive(false);
         TradeUI.Instance.gameObject.SetActive(false);
         EndOfDayUI.Instance.gameObject.SetActive(false);
@@ -103,6 +112,7 @@ internal class CardsViewSystem : IEcsRunSystem
 
     private static void SetActiveEndOfDayUi()
     {
+        StartGameUI.Instance.gameObject.SetActive(false);
         CardUI.Instance.gameObject.SetActive(false);
         TradeUI.Instance.gameObject.SetActive(false);
         EndOfDayUI.Instance.gameObject.SetActive(true);
@@ -110,6 +120,7 @@ internal class CardsViewSystem : IEcsRunSystem
 
     private static void SetActiveTradeUi()
     {
+        StartGameUI.Instance.gameObject.SetActive(false);
         CardUI.Instance.gameObject.SetActive(false);
         TradeUI.Instance.gameObject.SetActive(true);
         EndOfDayUI.Instance.gameObject.SetActive(false);

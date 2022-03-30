@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;    
+using System.Threading.Tasks;
 using Client;
 using Leopotam.Ecs;
 using MyBox.Internal;
@@ -22,10 +22,9 @@ public struct Trade
 public struct Day
 {
     public DialogNodeCanvas dayCanvas;
-    
-    
-    [Obsolete]
-    public CardObject[] cardsObjects;
+
+
+    [Obsolete] public CardObject[] cardsObjects;
 }
 
 sealed class EcsStartupManager : MonoBehaviour
@@ -102,7 +101,15 @@ sealed class EcsStartupManager : MonoBehaviour
 
     void Update()
     {
-        _systems?.Run();
+        if (StartGameUI.Instance.gameObject.activeSelf)
+        {
+            CardsViewSystem.SetActiveStartGame();
+        }
+
+        if (!StartGameUI.Instance.gameObject.activeSelf)
+        {
+            _systems?.Run();
+        }
     }
 
     void OnDestroy()
@@ -143,7 +150,7 @@ internal class CardsMechanicsSystem : IEcsRunSystem
                 DiceRoll roll = new DiceRoll {roll = Random.Range(0, 7)};
                 cardEntity.Replace(roll);
             }
-            
+
             if (cardEntity.Has<Trade>())
             {
             }
@@ -163,16 +170,16 @@ internal class NextCardSystem : IEcsRunSystem
             gameContext.dayCards.Remove(cardEntity);
 
             Debug.Log("Next card is " + cardEntity + " " + cardEntity.Get<CardInfo>().text);
-            
+
             if (!cardEntity.IsAlive())
             {
                 Debug.LogError("Card entity " + cardEntity + " is not alive");
             }
-            
+
             gameContext.currentCard = cardEntity;
             ref CardInfo cardInfo = ref cardEntity.Get<CardInfo>();
             cardEntity.Get<Render>();
-        }   
+        }
     }
 }
 
@@ -189,13 +196,13 @@ internal class NodeSystem : IEcsRunSystem
             ref Day day = ref dayCreateCardsFilter.Get1(i);
             gameContext.dayCards = new List<EcsEntity>();
             DialogNodeCanvas canvas = day.dayCanvas;
-            
+
             IEnumerable<CardNode> startNodes = canvas
                 .nodes
                 .OfType<CardNode>()
                 .OrderBy(node => node.rect.y)
                 .Where(node => node.frinPreviousIN.connections.Count == 0);
-        
+
             foreach (CardNode startNode in startNodes)
             {
                 EcsEntity cardEntity = CreateCard(startNode);
@@ -232,12 +239,12 @@ internal class NodeSystem : IEcsRunSystem
                 cardStub.Replace(dialogOption);
                 continue;
             }
-            
+
             CardNode childNode = node.dynamicConnectionPorts[i].connection(0).body as CardNode;
             EcsEntity childEntity = CreateCard(childNode);
             ref var childCardInfo = ref childEntity.Get<CardInfo>();
             childEntity.Replace(dialogOption);
-            
+
             cardInfo.nextCards.Add(childEntity);
         }
 
@@ -257,19 +264,22 @@ internal class NodeSystem : IEcsRunSystem
         {
             entity.Replace(node.cardObject.points.Value);
         }
+
         if (node.cardObject.skillsCheck.IsSet)
         {
             entity.Replace(node.cardObject.skillsCheck.Value);
         }
+
         if (node.cardObject.skillsComponent.IsSet)
         {
             entity.Replace(node.cardObject.skillsComponent.Value);
         }
+
         if (node.cardObject.tradeTest.IsSet)
         {
             entity.Replace(node.cardObject.tradeTest.Value);
         }
-        
+
         return cardInfo;
     }
 }
