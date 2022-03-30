@@ -46,7 +46,7 @@ namespace SwipeableView
 
             for (int i = 0; i < createCount; ++i)
             {
-                UISwipeableCard<TData, TContext> card = CreateCard();
+                var card = CreateCard();
                 card.DataIndex = i;
                 UpdateCardPosition(card);
                 _cards.Add(card);

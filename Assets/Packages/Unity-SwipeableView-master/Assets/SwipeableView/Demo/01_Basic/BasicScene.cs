@@ -10,19 +10,16 @@ namespace SwipeableView
         [SerializeField]
         private UISwipeableViewBasic swipeableView = default;
 
-        [SerializeField]
-        private Sprite[] sprites;
-
         void Start()
         {
-            var randomSprites = sprites.OrderBy(x => Random.Range(float.MinValue, float.MaxValue)).ToList();
-            List<BasicCardData> data = Enumerable.Range(0, 40)
+            var data = Enumerable.Range(0, 20)
                 .Select(i => new BasicCardData
                 {
-                    color = new Color(1f, 1f, 1f, 1.0f)
-                    , sprite = randomSprites[i % sprites.Length]
+                    color = new Color(Random.value, Random.value, Random.value, 1.0f)
                 })
                 .ToList();
+
+            swipeableView.UpdateData(data);
         }
 
         public void OnClickLike()

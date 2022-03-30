@@ -17,7 +17,6 @@ namespace SwipeableView
         public override void UpdateContent(BasicCardData data)
         {
             bg.color = data.color;
-            bg.sprite = data.sprite;
 
             imgLike.alpha = 0;
             imgNope.alpha = 0;
