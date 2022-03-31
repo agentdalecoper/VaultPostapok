@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: -444.82495, y: 5199.81}
   dynamicConnectionPorts:
   - {fileID: -300296710566991613}
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 23.219994, y: 454.44998}
   dynamicConnectionPorts:
   - {fileID: -3638184567224652508}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: -491.19, y: 1066.2201}
   dynamicConnectionPorts:
   - {fileID: -9067294046781255631}
@@ -313,8 +313,8 @@ MonoBehaviour:
   CharacterName: CharacterId2
   CharacterPotrait: {fileID: 21300000, guid: 9c02c99157c204fbe90251609b24e4c3, type: 3}
   DialogLine: "\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439\u0442\u0435,
-    \u044F \u043D\u0430\u0447\u0430\u043B\u044C\u043D\u0438\u043A \u043E\u0445\u0440\u0430\u043D\u044B.\n
-    \u0423 \u043D\u0430\u0441 \u0442\u0443\u0442 \u043D\u0435\u0431\u043E\u043B\u044C\u0448\u0438\u0435
+    \u044F \u043D\u0430\u0447\u0430\u043B\u044C\u043D\u0438\u043A \u043E\u0445\u0440\u0430\u043D\u044B.\n\u0423
+    \u043D\u0430\u0441 \u0442\u0443\u0442 \u043D\u0435\u0431\u043E\u043B\u044C\u0448\u0438\u0435
     \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u044B\n\u0441 \u043E\u0434\u043D\u043E\u0439
     \u0434\u0430\u043C\u043E\u0439..."
   ItemsToAdd: 
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 606.0852, y: 1068.23}
   dynamicConnectionPorts:
   - {fileID: -6299731159877789874}
@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: -445.55005, y: 5845.185}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
@@ -824,7 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: -461.9299, y: 2445.5095}
   dynamicConnectionPorts:
   - {fileID: -5447375062339552493}
@@ -936,7 +936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 2079.7803, y: 423.52982}
   dynamicConnectionPorts:
   - {fileID: 2877202715617726170}
@@ -1247,7 +1247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 122.535065, y: 4508.341}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 177.85004, y: 3171.78}
   dynamicConnectionPorts:
   - {fileID: 2299989677029224052}
@@ -1481,7 +1481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 1531.6101, y: 428.1098}
   dynamicConnectionPorts:
   - {fileID: 8396204584765554651}
@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 44.02513, y: 1069.8}
   dynamicConnectionPorts:
   - {fileID: 2739482671753620342}
@@ -1665,7 +1665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 84.70006, y: 2431.4497}
   dynamicConnectionPorts:
   - {fileID: 19368815470129048}
@@ -1740,7 +1740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 158.27516, y: 1730.7096}
   dynamicConnectionPorts:
   - {fileID: 8108306612314266619}
@@ -2014,7 +2014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: -497.65, y: 425.36005}
   dynamicConnectionPorts:
   - {fileID: -360142883949488705}
@@ -2078,7 +2078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: -454.67496, y: 4504.4004}
   dynamicConnectionPorts:
   - {fileID: 6530986973502882708}
@@ -2166,7 +2166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 1019.9801, y: 434.3598}
   dynamicConnectionPorts:
   - {fileID: -1385017529234487898}
@@ -2339,7 +2339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 749.2501, y: 1749.1896}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2517,7 +2517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: -443.91492, y: 3078.19}
   dynamicConnectionPorts:
   - {fileID: -7305020586642884163}
@@ -2594,7 +2594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: -483.49487, y: 1726.0597}
   dynamicConnectionPorts:
   - {fileID: -517068513157022564}
@@ -3091,7 +3091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: -456.64496, y: 3838.54}
   dynamicConnectionPorts:
   - {fileID: -8963903902229910597}
@@ -3244,7 +3244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 553.51, y: 429.06}
   dynamicConnectionPorts:
   - {fileID: -4767705120892131892}
@@ -3431,7 +3431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 637.19006, y: 2425.18}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3510,7 +3510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 721.75, y: 3162.3398}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3711,7 +3711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed27bae6a3947364193a3e1558f691e8, type: 3}
   m_Name: Card node
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
+  canvas: {fileID: 11400000}
   position: {x: 233.30011, y: 5329.4097}
   dynamicConnectionPorts: []
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}

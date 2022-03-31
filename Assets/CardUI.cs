@@ -66,7 +66,7 @@ public class CardUI : MonoBehaviour
     public async void ShowCardData(EcsEntity cardEntity, CardInfo cardInfo, SkillsCheck skillsCheck, 
         DialogOption? leftOption = null, DialogOption? rightOption = null)
     {
-        ActivateDiceView();
+        DeActivateDiceView();
         text.text = cardInfo.text;
         image.sprite = cardInfo.sprite;
         diceView.text.text = 0.ToString();
@@ -86,6 +86,7 @@ public class CardUI : MonoBehaviour
     public async void ShowDiceData(DiceRoll diceRoll, bool success,
         SkillsCheck skillsCheck, SkillsComponent playerSkills)
     {
+        ActivateDiceView();
         diceView.diceEnabled = false;
 
         if (success)
@@ -100,8 +101,8 @@ public class CardUI : MonoBehaviour
         isWaitingUiDelay.TrySetResult(true);
         diceView.text.text = diceRoll.roll.ToString();
                 
-        buttonLeft.gameObject.SetActive(true);
-        buttonRight.gameObject.SetActive(true);
+        // buttonLeft.gameObject.SetActive(true);
+        // buttonRight.gameObject.SetActive(true);
 
         string successOrLoose = success ? "Dice success" : "Dice lose";
         // text.text = $"{successOrLoose} was checking {skillsCheck} vs. " +
@@ -125,7 +126,7 @@ public class CardUI : MonoBehaviour
     private void DeActivateDiceView()
     {
         diceView.gameObject.SetActive(false);
-        buttonLeft.gameObject.SetActive(true);
-        buttonRight.gameObject.SetActive(true);
+        // buttonLeft.gameObject.SetActive(true);
+        // buttonRight.gameObject.SetActive(true);
     }
 }

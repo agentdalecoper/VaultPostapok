@@ -178,7 +178,10 @@ namespace SwipeableView
 
         float GetRequiredDistance(float positionX)
         {
-            return positionX > 0 ? _cachedRect.rect.size.x / 2 : -(_cachedRect.rect.size.x / 2);
+            float r = positionX > 0 ? _cachedRect.rect.size.x / 2 : -(_cachedRect.rect.size.x / 2);
+            r *= 1f;
+            Debug.Log("Required distance " + r + " and position x=" + positionX);
+            return r;
         }
 
         float GetCurrentPosition(float positionX)

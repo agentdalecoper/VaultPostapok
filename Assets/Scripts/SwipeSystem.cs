@@ -18,6 +18,9 @@ internal class SwipeSystem : IEcsInitSystem
 
         CardUI.ActionSwipedRight += SwipedRight;
         CardUI.ActionSwipedLeft += SwipedLeft;
+        UISwipeableViewBasic.ActionSwipedLeft += card => { SwipedLeft(EcsEntity.Null); };
+        UISwipeableViewBasic.ActionSwipedRight += card => { SwipedRight(EcsEntity.Null); };
+
         TradeUI.Instance.okButton.onClick.AddListener(delegate { SwipedRight(EcsEntity.Null); });
         EndOfDayUI.Instance.button.onClick.AddListener(delegate { SwipedRight(EcsEntity.Null); });
     }

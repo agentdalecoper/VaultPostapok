@@ -35,7 +35,7 @@ public abstract class BaseDialogNode : Node
 
 	public virtual BaseDialogNode PassAhead(int inputValue)
 	{
-		return this;
+		return this;         
 	}
 
 	///check if the first connection of the specified port points to something

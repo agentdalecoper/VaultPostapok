@@ -32,6 +32,16 @@ namespace SwipeableView
         readonly List<UISwipeableCard<TData, TContext>> _cards = new List<UISwipeableCard<TData, TContext>>(_maxCreateCardCount);
         const int _maxCreateCardCount = 2;
 
+        private void Awake()
+        {
+            var card = _swiper.target.GetComponent<UISwipeableCard<TData, TContext>>();
+            card.SetContext(Context);
+            // card.SetVisible(false);
+            card.ActionSwipedRight += UpdateCardPosition;
+            card.ActionSwipedLeft += UpdateCardPosition;
+            card.ActionSwipedRight += swipeableCard => ActionSwipedRight?.Invoke(swipeableCard);
+            card.ActionSwipedLeft += swipeableCard => ActionSwipedLeft?.Invoke(swipeableCard);
+        }
 
         /// <summary>
         /// Initialize of SwipeableView
@@ -68,23 +78,25 @@ namespace SwipeableView
             IsAutoSwiping = true;
             _swiper.AutoSwipe(direction);
         }
+        
 
         UISwipeableCard<TData, TContext> CreateCard()
         {
-            var cardObject = Instantiate(_cardPrefab, _cardRoot);
+            GameObject cardObject = Instantiate(_cardPrefab, _cardRoot);
             var card = cardObject.GetComponent<UISwipeableCard<TData, TContext>>();
             card.SetContext(Context);
             card.SetVisible(false);
             card.ActionSwipedRight += UpdateCardPosition;
             card.ActionSwipedLeft += UpdateCardPosition;
-            card.ActionSwipingRight += MoveToFrontNextCard;
-            card.ActionSwipingLeft += MoveToFrontNextCard;
+            // card.ActionSwipingRight += MoveToFrontNextCard;
+            // card.ActionSwipingLeft += MoveToFrontNextCard;
 
             return card;
         }
 
         void UpdateCardPosition(UISwipeableCard<TData, TContext> card)
         {
+            Debug.Log("Swipped! ");
             // move to the back
             card.transform.SetAsFirstSibling();
             card.UpdatePosition(Vector3.zero);
@@ -109,7 +121,7 @@ namespace SwipeableView
             // if data doesn't exist hide card
             if (dataIndex < 0 || dataIndex > _data.Count - 1)
             {
-                card.SetVisible(false);
+                // card.SetVisible(false);
                 return;
             }
 

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,6 +9,14 @@ namespace SwipeableView
         RectTransform cachedRect;
 
         ISwipeable swipeable;
+
+        public GameObject target;
+        public UISwipeableCardBasic swipableCard;
+
+        private void Start()
+        {
+            SetTarget(target, swipableCard);
+        }
 
         /// <summary>
         /// Set the target.
@@ -40,6 +49,7 @@ namespace SwipeableView
         Vector2 pointerStartLocalPosition;
         void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
         {
+            
             if (eventData.button != PointerEventData.InputButton.Left)
             {
                 return;
@@ -49,6 +59,8 @@ namespace SwipeableView
             {
                 return;
             }
+            
+            Debug.Log("On begin drag");
 
             pointerStartLocalPosition = Vector2.zero;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
