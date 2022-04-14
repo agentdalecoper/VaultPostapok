@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Client;
 using Leopotam.Ecs;
+using SwipeableView;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -17,6 +18,8 @@ public class CardUI : MonoBehaviour
     public DiceView diceView;
     public Image image;
 
+    public TextMeshProUGUI playerSayingText;
+
     TaskCompletionSource<bool> isWaitingUiDelay = new TaskCompletionSource<bool>();
 
     public static event Action<EcsEntity> ActionNewCardAppeared;
@@ -25,6 +28,10 @@ public class CardUI : MonoBehaviour
 
     private static CardUI instance;
     public static CardUI Instance => instance;
+
+    private string leftOptionSaying;
+    private string rightOptionSaying;
+
 
     private void Awake()
     {
@@ -36,6 +43,34 @@ public class CardUI : MonoBehaviour
         buttonRight.onClick.AddListener(delegate { ActionSwipedRight?.Invoke(EcsEntity.Null); });
         
         diceView.gameObject.SetActive(false);
+        playerSayingText.gameObject.SetActive(false);
+        
+        UISwipeableViewBasic.ActionSwipingRight += (s,f) =>
+        {
+            playerSayingText.text = rightOptionSaying;
+            if (f < 0.2f)
+            {
+                playerSayingText.gameObject.SetActive(false);
+            }
+            else
+            {
+                playerSayingText.gameObject.SetActive(true);
+
+            }
+        };
+        UISwipeableViewBasic.ActionSwipingLeft += (s,f) =>
+        {
+            playerSayingText.text = leftOptionSaying;
+            if (f < 0.2f)
+            {
+                playerSayingText.gameObject.SetActive(false);
+            }
+            else
+            {
+                playerSayingText.gameObject.SetActive(true);
+
+            }
+        };
     }
     
     public async void ShowCardData(EcsEntity cardEntity, CardInfo cardInfo)
@@ -71,14 +106,17 @@ public class CardUI : MonoBehaviour
         image.sprite = cardInfo.sprite;
         diceView.text.text = 0.ToString();
 
+        playerSayingText.gameObject.SetActive(false);
         if (leftOption != null)
         {
             buttonLeft.GetComponentInChildren<TextMeshProUGUI>().text = leftOption.Value.text;
+            leftOptionSaying = leftOption.Value.text;
         }
 
         if (rightOption != null)
         {
             buttonRight.GetComponentInChildren<TextMeshProUGUI>().text = rightOption.Value.text;
+            rightOptionSaying = rightOption.Value.text;
         }
     }
     

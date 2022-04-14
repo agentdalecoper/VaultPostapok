@@ -14,6 +14,8 @@ namespace SwipeableView
         public static event Action<UISwipeableCard<TData, TContext>> ActionNewCardAppeared;
         public static event Action<UISwipeableCard<TData, TContext>> ActionSwipedRight;
         public static event Action<UISwipeableCard<TData, TContext>> ActionSwipedLeft;
+        public static event Action<UISwipeableCard<TData, TContext>, float> ActionSwipingRight;
+        public static event Action<UISwipeableCard<TData, TContext>, float> ActionSwipingLeft;
 
         /// <summary>
         /// Is the card swiping.
@@ -29,7 +31,9 @@ namespace SwipeableView
 
         List<TData> _data = new List<TData>();
 
-        readonly List<UISwipeableCard<TData, TContext>> _cards = new List<UISwipeableCard<TData, TContext>>(_maxCreateCardCount);
+        readonly List<UISwipeableCard<TData, TContext>> _cards =
+            new List<UISwipeableCard<TData, TContext>>(_maxCreateCardCount);
+
         const int _maxCreateCardCount = 2;
 
         private void Awake()
@@ -41,6 +45,8 @@ namespace SwipeableView
             card.ActionSwipedLeft += UpdateCardPosition;
             card.ActionSwipedRight += swipeableCard => ActionSwipedRight?.Invoke(swipeableCard);
             card.ActionSwipedLeft += swipeableCard => ActionSwipedLeft?.Invoke(swipeableCard);
+            card.ActionSwipingLeft += (swipeableCard, f) => ActionSwipingLeft?.Invoke(swipeableCard, f);
+            card.ActionSwipingRight += (swipeableCard, f) => ActionSwipingRight?.Invoke(swipeableCard, f);
         }
 
         /// <summary>
@@ -51,8 +57,7 @@ namespace SwipeableView
         {
             _data = data;
 
-            int createCount = data.Count > _maxCreateCardCount ?
-                _maxCreateCardCount : data.Count;
+            int createCount = data.Count > _maxCreateCardCount ? _maxCreateCardCount : data.Count;
 
             for (int i = 0; i < createCount; ++i)
             {
@@ -78,7 +83,7 @@ namespace SwipeableView
             IsAutoSwiping = true;
             _swiper.AutoSwipe(direction);
         }
-        
+
 
         UISwipeableCard<TData, TContext> CreateCard()
         {
@@ -150,7 +155,11 @@ namespace SwipeableView
         Left,
     }
 
-    public sealed class SwipeableViewNullContext { }
+    public sealed class SwipeableViewNullContext
+    {
+    }
+
     public class UISwipeableView<TData> : UISwipeableView<TData, SwipeableViewNullContext>
-    { }
+    {
+    }
 }
