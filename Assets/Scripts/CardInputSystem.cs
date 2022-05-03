@@ -31,25 +31,43 @@ internal class CardInputSystem : IEcsRunSystem
             }
             else if (swipeDirection == SwipeDirection.Left)
             {
-                if (!cardInfo.nextCards[0].Has<CardStub>())
-                {
-                    gameContext.currentCard = cardInfo.nextCards[0];
-                    gameContext.currentCard.Value.Get<Render>();
-                    Debug.Log("next card is left card " + gameContext.currentCard);
-                }
+                float attack = Random.Range(10f, 20f);
+                gameContext.enemyHp -= attack; 
+                
+                CardUI.Instance.StartPooledDamageTween(gameContext.enemyHp, gameContext.enemyMaxHP);
+                TextPopUpSpawnerManager.Instance.StartTextPopUpTween("-" + attack,
+                    Color.red);
+
+                // if (!cardInfo.nextCards[0].Has<CardStub>())
+                // {
+                //     gameContext.currentCard = cardInfo.nextCards[0];
+                //     gameContext.currentCard.Value.Get<Render>();
+                //     Debug.Log("next card is left card " + gameContext.currentCard);
+                // }
             }
             else
             {
-                if (!cardInfo.nextCards[1].Has<CardStub>())
-                {
-                    gameContext.currentCard = cardInfo.nextCards[1];
-                    gameContext.currentCard.Value.Get<Render>();
-                    Debug.Log("next card is right card " + gameContext.currentCard);
-                }
+                float attack = Random.Range(10f, 20f);
+                gameContext.enemyHp -= attack; 
+                
+                CardUI.Instance.StartPooledDamageTween(gameContext.enemyHp, gameContext.enemyMaxHP);
+                TextPopUpSpawnerManager.Instance.StartTextPopUpTween("-" + attack,
+                    Color.red);
+
+                // if (!cardInfo.nextCards[1].Has<CardStub>())
+                // {
+                //     gameContext.currentCard = cardInfo.nextCards[1];
+                //     gameContext.currentCard.Value.Get<Render>();
+                //     Debug.Log("next card is right card " + gameContext.currentCard);
+                // }
             }
 
-            Debug.Log("Destroying card " + currentCard);
-            currentCard.Destroy();
+            // Debug.Log("Destroying card " + currentCard);
+            if (gameContext.enemyHp <= 0f)
+            {
+                gameContext.enemyHp = gameContext.enemyMaxHP;
+                currentCard.Destroy();
+            }
         }
         if (!gameContext.currentCard.HasValue || !gameContext.currentCard.Value.IsAlive())
         {
@@ -67,7 +85,6 @@ internal class CardInputSystem : IEcsRunSystem
             ref CardInfo cardInfo = ref cardEntity.Get<CardInfo>();
             gameContext.currentCard.Value.Get<Render>();
         }
-        
     }
     
       

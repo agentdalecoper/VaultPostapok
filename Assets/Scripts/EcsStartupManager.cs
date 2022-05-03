@@ -311,6 +311,10 @@ public class GameContext
     public int dayNumber;
     public EndOfGame? endOfGame;
     public SkillsComponent playerSkills;
+
+    public float enemyHp = 100f;
+    public float enemyMaxHP = 100f;
+
 }
 
 public struct CardInfo

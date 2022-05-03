@@ -19,6 +19,7 @@ public class CardUI : MonoBehaviour
     public Image image;
 
     public TextMeshProUGUI playerSayingText;
+    public Image enemyHp;
 
     TaskCompletionSource<bool> isWaitingUiDelay = new TaskCompletionSource<bool>();
 
@@ -105,6 +106,8 @@ public class CardUI : MonoBehaviour
         text.text = cardInfo.text;
         image.sprite = cardInfo.sprite;
         diceView.text.text = 0.ToString();
+        enemyHp.fillAmount = 1f;
+
 
         playerSayingText.gameObject.SetActive(false);
         if (leftOption != null)
@@ -119,6 +122,12 @@ public class CardUI : MonoBehaviour
             rightOptionSaying = rightOption.Value.text;
         }
     }
+
+    public void StartPooledDamageTween(float armyHp, float armyMaxHp)
+    {
+        enemyHp.fillAmount = armyHp * 1f / armyMaxHp;
+    }
+
     
     
     public async void ShowDiceData(DiceRoll diceRoll, bool success,
